@@ -1,5 +1,5 @@
-export const NAVEGACION ={
-    home: "/",
-    details:"/details",
-    landing:"landing"
+export const NAVEGACION = {
+    landing: "/",
+    home: "/home",
+    details: "/details/:heroId",
 }

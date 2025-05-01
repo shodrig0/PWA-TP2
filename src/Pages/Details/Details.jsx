@@ -1,23 +1,56 @@
-import Title from "../../Components/Title/Title"
+import { useState, useEffect } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { NAVEGACION } from "../../utils/const"
 import Button from "../../Components/Button/Button"
-import Input from "../../Components/Input/Input"
-import useHeroes from '../../Hooks/useHeroes'
+// import Title from "../../Components/Title/Title"
+// import Input from "../../Components/Input/Input"
+// import useHeroes from '../../Hooks/useHeroes'
 
 const Details = () => {
-  const { heroes, searchValue, onSearchClickHandle, onSearchChangeHandle } = useHeroes()
+  // const { heroes, searchValue, onSearchClickHandle, onSearchChangeHandle } = useHeroes()
+  const navigate = useNavigate()
+
+  const handleGoToHome = () => {
+    navigate(NAVEGACION.home)
+  }
+
+  const { heroId } = useParams()
+  const [hero, setHero] = useState(null)
+
+  useEffect(() => {
+    const heroDetails = async () => {
+      try {
+        const resp = await fetch(`/api/heroes/${heroId}`)
+
+        if (!resp.ok) {
+          throw new Error('No hero')
+        }
+
+        const data = await resp.json()
+        setHero(data)
+      } catch (error) {
+        console.log('Error, no data', error)
+      }
+    }
+    heroDetails()
+  }, [heroId])
+
+  if (!hero) {
+    return <p>Loading...</p>
+  }
 
   return (
+
     <>
-      <Title title={"Detalles"} />
-      <Input className={``} onChange={onSearchChangeHandle} value={searchValue} />
-      <Button className={``} onClick={onSearchClickHandle} nombre={`Buscar Personaje`} />
-      {heroes && heroes.portrait && (
-        <img src={heroes.portrait} />
-      )}
-      {/* <Button className={``} onClick={handleGoToHome} nombre={`Home`} /> */}
-      {/* <div>
-        <div>{loadingInfo}</div>
-      </div> */}
+      <div className="p-4">
+        <h2 className="text-2xl font-bold">{hero.name}</h2>
+        <img src={hero.portrait} alt={hero.name} />
+        <p><strong>Description: </strong>{`${hero.description}`}</p>
+        <p><strong>Rol:</strong> {`${hero.role}`}</p>
+        <p><strong>Age:</strong> {`${hero.age}`}</p>
+        {/* hasta acá no mas llego si estoy deberia ser una card */}
+      </div>
+      <Button className="btn-success bg-orange-400 hover:bg-orange-500 text-black font-bold py-2 px-4 rounded" onClick={handleGoToHome} name={`Back`} />
     </>
   )
 }

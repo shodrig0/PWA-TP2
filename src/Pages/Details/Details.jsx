@@ -43,9 +43,12 @@ const Details = () => {
 
     <>
       <div className="p-4">
-        <h1 className="text-2xl font-bold">{hero.name}</h1>
+        <h2 className="text-2xl font-bold">{hero.name}</h2>
         <img src={hero.portrait} alt={hero.name} />
-        <p>{hero.description}</p>
+        <p><strong>Description: </strong>{`${hero.description}`}</p>
+        <p><strong>Rol:</strong> {`${hero.role}`}</p>
+        <p><strong>Age:</strong> {`${hero.age}`}</p>
+        {/* hasta acá no mas llego si estoy deberia ser una card */}
       </div>
       <Button className="btn-success bg-orange-400 hover:bg-orange-500 text-black font-bold py-2 px-4 rounded" onClick={handleGoToHome} name={`Back`} />
     </>

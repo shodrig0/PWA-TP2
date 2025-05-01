@@ -15,7 +15,7 @@ const useHeroes = () => {
             const resp = await fetch(url)
 
             if (!resp.ok) {
-                throw new Error('No hay heroe')
+                throw new Error('No hero')
             }
 
             const data = await resp.json()
@@ -30,9 +30,11 @@ const useHeroes = () => {
         }
     }, [])
 
-    console.log('-------')
-    console.log(heroes)
-    console.log('-------')
+    // useEffect(() => {
+    //     console.log('-------')
+    //     console.log(heroes)
+    //     console.log('-------')
+    // }, [heroes])
 
     useEffect(() => {
         getHeroes()
@@ -42,7 +44,7 @@ const useHeroes = () => {
         if (searchValue.trim() === "") {
             setFilteredHeroes(heroes)
         } else {
-            const filtered = heroes.filter((hero) => hero.name.toLowerCase().includes(searchValue.toLowerCase()))
+            const filtered = heroes.filter((hero) => hero.name.toLowerCase().startsWith(searchValue.toLowerCase()))
             setFilteredHeroes(filtered)
         }
     }, [searchValue, heroes])

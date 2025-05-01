@@ -6,7 +6,8 @@ const Input = ({ className, value, onChange, placeholder }) => {
             className={className}
             value={value || ""}
             onChange={(e) => onChange(e.target.value)}
-            placeholder={placeholder} />
+            placeholder={placeholder}
+            autoFocus />
     )
 }
 

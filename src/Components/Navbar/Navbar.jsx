@@ -1,9 +1,18 @@
+import { NAVEGACION } from '../../utils/const' // ?
+import { useNavigate } from 'react-router-dom'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 import useHeroes from '../../Hooks/useHeroes'
 
 const Navbar = () => {
     const { heroes, searchValue, onSearchChangeHandle, loading } = useHeroes()
+
+    const navigate = useNavigate()
+
+    const handleHeroClick = (heroId) => {
+        const url = NAVEGACION.details.replace(':heroId', heroId)
+        navigate(url)
+    }
 
     return (
         <div className="relative flex items-center justify-between p-4 bg-gray-800 text-white">
@@ -15,7 +24,10 @@ const Navbar = () => {
             />
             {/* no quedaría mejor en un componenete? */}
             {searchValue.trim() !== "" && (
-                <div className="absolute top-full left-0 w-1/2 bg-gray-700 text-white rounded-lg shadow-lg max-h-64 overflow-y-auto">
+                <div className="absolute top-full left-0 w-1/2 bg-gray-800 text-white shadow-lg max-h-64 overflow-y-auto">
+                    <div className="p-2 bg-gray-700 text-sm font-bold text-white-300">
+                        Hero
+                    </div>
                     {loading ? (
                         <p className="p-2 text-gray-400">Loading...</p>
                     ) : heroes.length > 0 ? (
@@ -23,6 +35,7 @@ const Navbar = () => {
                             <div
                                 key={hero.name}
                                 className="p-2 hover:bg-gray-600 cursor-pointer flex items-center"
+                                onClick={() => handleHeroClick(hero.key)}
                             >
                                 <img
                                     src={hero.portrait}

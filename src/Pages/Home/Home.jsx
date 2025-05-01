@@ -4,6 +4,7 @@ import useHeroes from "../../Hooks/useHeroes"
 import React from 'react'
 import ContainerCardHeroe from '../../Components/containerCardHeroe';
 import ContainerCardMaps from '../../Components/containerCardMaps';
+import Landing from "../Landing/Landing";
 
 function Home() {
   const { heroes } = useHeroes()
@@ -15,7 +16,9 @@ function Home() {
     <div>
       <button onClick={irDetalles}>vamos detalles</button>
       <ContainerCardHeroe/>
-      {/* <ContainerCardMaps/> */}
+      <ContainerCardMaps/>
+      <Landing/>
+
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { Routes, Route ,BrowserRouter } from 'react-router-dom';
 import {NAVEGACION} from "./utils/const"
 import Home from './Pages/Home/Home';
 import Details from './Pages/Details/Details';
+import Landing from './Pages/Landing/Landing';
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <Routes>
       <Route element={<Home />} path={NAVEGACION.home} />
       <Route element={<Details />} path={NAVEGACION.details} />
+      <Route element={<Landing />} path={NAVEGACION.landing} />
     </Routes>
   </BrowserRouter>
   )

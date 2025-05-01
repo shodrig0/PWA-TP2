@@ -2,6 +2,9 @@ import { useNavigate } from "react-router-dom"
 import { NAVEGACION } from "../../utils/const"
 import useHeroes from "../../Hooks/useHeroes"
 import React from 'react'
+import ContainerCardHeroe from '../../Components/containerCardHeroe';
+import ContainerCardMaps from '../../Components/containerCardMaps';
+import Landing from "../Landing/Landing";
 
 function Home() {
   const { heroes } = useHeroes()
@@ -11,21 +14,11 @@ function Home() {
   }
   return (
     <div>
-      <button onClick={irDetalles}>go to details</button>
-      <div>
-        {heroes.length > 0 ? (
-          heroes.map((hero) => (
-            <div key={hero.name}>
-              <h4>{hero.name}</h4>
-              {hero.portrait && <img src={hero.portrait} />}
-            </div>
-          ))
-        ) : (
-          <p>loading</p>
-        )
+      <button onClick={irDetalles}>vamos detalles</button>
+      <ContainerCardHeroe/>
+      <ContainerCardMaps/>
+      <Landing/>
 
-        }
-      </div>
     </div>
   )
 }

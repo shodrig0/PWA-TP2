@@ -1,4 +1,5 @@
 export const NAVEGACION = {
-    home: "/",
-    details: "/details/:heroId"
+    landing: "/",
+    home: "/home",
+    details: "/details/:heroId",
 }

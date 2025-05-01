@@ -1,17 +1,13 @@
-import { useNavigate } from "react-router-dom"
-import { NAVEGACION } from "../../utils/const"
 import useHeroes from "../../Hooks/useHeroes"
+import Header from "../../Components/Header/Header"
 import React from 'react'
 
 function Home() {
   const { heroes } = useHeroes()
-  const navigate = useNavigate()
-  const irDetalles = () => {
-    navigate(NAVEGACION.details)
-  }
+
   return (
-    <div>
-      <button onClick={irDetalles}>go to details</button>
+    <>
+      <Header />
       <div>
         {heroes.length > 0 ? (
           heroes.map((hero) => (
@@ -26,7 +22,7 @@ function Home() {
 
         }
       </div>
-    </div>
+    </>
   )
 }
 

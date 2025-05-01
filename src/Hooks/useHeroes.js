@@ -2,48 +2,45 @@ import { useState, useEffect, useCallback } from "react"
 
 const useHeroes = () => {
 
-    const [character, setCharacter] = useState(null)
+    const [heroes, setHeroes] = useState([])
     const [searchValue, setSearchValue] = useState("")
 
-    const getDetailsCharacter = useCallback(async () => {
+    const getHeroes = useCallback(async () => {
         try {
-            const charResult = await fetch(
-                `https://overfast-api.tekrop.fr/heroes/${searchValue}`)
-
-            if (!charResult.ok) {
+            const url = searchValue ? `/api/heroes/${searchValue}` : `/api/heroes/`
+            const resp = await fetch(url)
+            if (!resp.ok) {
                 throw new Error('No hay heroe')
             }
 
-            const characterObtained = await charResult.json()
-            setCharacter(characterObtained)
+            const data = await resp.json()
+            setHeroes(data)
         } catch (error) {
             console.log("+++++", error, "+++++")
         }
     }, [searchValue])
 
     console.log('-------')
-    console.log(character)
+    console.log(heroes)
     console.log('-------')
 
     useEffect(() => {
-        if (searchValue) {
-            getDetailsCharacter()
-        }
-    }, [searchValue, getDetailsCharacter])
+        getHeroes()
+    }, [getHeroes])
 
     const onSearchChangeHandle = (value) => {
         setSearchValue(value)
     }
 
-    const onSearchClickHandle = () => {
-        getDetailsCharacter()
-    }
+    // const onSearchClickHandle = () => {
+    //     getHeroes()
+    // }
 
     return {
-        character,
+        heroes,
         searchValue,
         onSearchChangeHandle,
-        onSearchClickHandle
+        // onSearchClickHandle
     }
 
 }

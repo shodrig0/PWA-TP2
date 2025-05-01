@@ -1,15 +1,31 @@
+import { useNavigate } from "react-router-dom"
+import { NAVEGACION } from "../../utils/const"
+import useHeroes from "../../Hooks/useHeroes"
 import React from 'react'
-import {useNavigate} from "react-router-dom"
-import {NAVEGACION} from "../../utils/const"
 
 function Home() {
-const navigate = useNavigate();
-const irDetalles=()=>{
+  const { heroes } = useHeroes()
+  const navigate = useNavigate()
+  const irDetalles = () => {
     navigate(NAVEGACION.details)
-}
+  }
   return (
     <div>
-      <button onClick={irDetalles}>vamos detalles</button>
+      <button onClick={irDetalles}>go to details</button>
+      <div>
+        {heroes.length > 0 ? (
+          heroes.map((hero) => (
+            <div key={hero.name}>
+              <h4>{hero.name}</h4>
+              {hero.portrait && <img src={hero.portrait} />}
+            </div>
+          ))
+        ) : (
+          <p>loading</p>
+        )
+
+        }
+      </div>
     </div>
   )
 }

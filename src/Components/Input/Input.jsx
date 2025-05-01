@@ -1,10 +1,12 @@
-const Input = ({ onChange, value }) => {
-    const handleChange = (evento) => {
-        onChange(evento.target.value)
-    }
+const Input = ({ className, value, onChange, placeholder }) => {
 
     return (
-        <input className={``} value={value} onChange={handleChange} />
+        <input
+            type="text"
+            className={className}
+            value={value || ""}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder={placeholder} />
     )
 }
 

@@ -1,14 +1,14 @@
-import useHeroes from "../../Hooks/useHeroes"
+// import useHeroes from "../../Hooks/useHeroes"
 import Header from "../../Components/Header/Header"
 import React from 'react'
 
 function Home() {
-  const { heroes } = useHeroes()
+  // const { heroes } = useHeroes()
 
   return (
     <>
       <Header />
-      <div>
+      {/* <div>
         {heroes.length > 0 ? (
           heroes.map((hero) => (
             <div key={hero.name}>
@@ -21,7 +21,7 @@ function Home() {
         )
 
         }
-      </div>
+      </div> */}
     </>
   )
 }

@@ -3,22 +3,32 @@ import { useState, useEffect, useCallback } from "react"
 const useHeroes = () => {
 
     const [heroes, setHeroes] = useState([])
+    const [filteredHeroes, setFilteredHeroes] = useState([])
     const [searchValue, setSearchValue] = useState("")
+    const [loading, setLoading] = useState(false)
 
     const getHeroes = useCallback(async () => {
         try {
-            const url = searchValue ? `/api/heroes/${searchValue}` : `/api/heroes/`
+            setLoading(true)
+
+            const url = `/api/heroes/`
             const resp = await fetch(url)
+
             if (!resp.ok) {
                 throw new Error('No hay heroe')
             }
 
             const data = await resp.json()
             setHeroes(data)
+            setFilteredHeroes(data)
         } catch (error) {
             console.log("+++++", error, "+++++")
+            setHeroes([])
+            setFilteredHeroes([])
+        } finally {
+            setLoading(false)
         }
-    }, [searchValue])
+    }, [])
 
     console.log('-------')
     console.log(heroes)
@@ -27,6 +37,15 @@ const useHeroes = () => {
     useEffect(() => {
         getHeroes()
     }, [getHeroes])
+
+    useEffect(() => {
+        if (searchValue.trim() === "") {
+            setFilteredHeroes(heroes)
+        } else {
+            const filtered = heroes.filter((hero) => hero.name.toLowerCase().includes(searchValue.toLowerCase()))
+            setFilteredHeroes(filtered)
+        }
+    }, [searchValue, heroes])
 
     const onSearchChangeHandle = (value) => {
         setSearchValue(value)
@@ -37,10 +56,10 @@ const useHeroes = () => {
     // }
 
     return {
-        heroes,
+        heroes: filteredHeroes,
         searchValue,
         onSearchChangeHandle,
-        // onSearchClickHandle
+        loading
     }
 
 }

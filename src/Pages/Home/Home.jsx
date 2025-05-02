@@ -1,15 +1,15 @@
 import useHeroes from "../../Hooks/useHeroes";
 import Header from "../../Components/Header/Header"
-import React,{useState} from 'react'
-import ContainerCardHeroe from '../../Components/containerCardHeroe';
-import ContainerCardMaps from '../../Components/containerCardMaps';
+import React, { useState } from 'react'
+import ContainerCardHero from "../../Components/Containers/ContainerCardHero/ContainerCardHero"
+import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap"
 import BannerHome from "../../Components/bannerHome/bannerHome";
 import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
 
 function Home() {
   const { heroes } = useHeroes();
-  const { currentPage} = usePagination();
+  const { currentPage } = usePagination();
   const heroesPorPagina = 8;
 
   // Cálculo de índices
@@ -19,11 +19,10 @@ function Home() {
   return (
     <div>
       <Header />
-      <BannerHome/>
-      {/* <button onClick={irDetalles}>vamos detalles</button> */}
-      <ContainerCardHeroe  heroes={heroesActuales}/>
-      {/* <ContainerCardMaps /> */}
- <BtnPaginado elementosPorPagina={heroesPorPagina} />
+      <BannerHome />
+      {/* <ContainerCardHero  heroes={heroesActuales}/>
+      {/* <ContainerCardMap /> */} */}
+      <BtnPaginado elementosPorPagina={heroesPorPagina} />
     </div>
   )
 }

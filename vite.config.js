@@ -9,6 +9,7 @@ export default defineConfig({
       '/api': {
         target: 'https://overfast-api.tekrop.fr',
         changeOrigin: true,
+        secure: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },

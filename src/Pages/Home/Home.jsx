@@ -1,6 +1,5 @@
 import useHeroes from "../../Hooks/useHeroes";
 import Header from "../../Components/Header/Header"
-import React, { useState } from 'react'
 import ContainerCardHero from "../../Components/Containers/ContainerCardHero/ContainerCardHero"
 import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap"
 import BannerHome from "../../Components/bannerHome/bannerHome";
@@ -20,8 +19,8 @@ function Home() {
     <div>
       <Header />
       <BannerHome />
-      {/* <ContainerCardHero  heroes={heroesActuales}/>
-      {/* <ContainerCardMap /> */} */}
+      <ContainerCardHero heroes={heroesActuales} />
+      {/* <ContainerCardMap /> */}
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
     </div>
   )

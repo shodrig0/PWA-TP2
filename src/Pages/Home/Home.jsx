@@ -5,6 +5,7 @@ import ContainerCardMap from "../../Components/Containers/ContainerCardMap/Conta
 import BannerHome from "../../Components/bannerHome/bannerHome";
 import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
+import Footer from "../../Components/footer/Footer";
 
 function Home() {
   const { heroes } = useHeroes();
@@ -16,12 +17,13 @@ function Home() {
   const indexPrimerHeroe = indexUltimoHeroe - heroesPorPagina;
   const heroesActuales = heroes.slice(indexPrimerHeroe, indexUltimoHeroe);
   return (
-    <div>
+    <div className="grid place-items-center bg-black">
       <Header />
       <BannerHome />
       <ContainerCardHero heroes={heroesActuales} />
       {/* <ContainerCardMap /> */}
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
+      <Footer/>
     </div>
   )
 }

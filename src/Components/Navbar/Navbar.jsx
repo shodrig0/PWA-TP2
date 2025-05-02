@@ -15,7 +15,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="relative flex items-center justify-between z-20 p-4 bg-gray-800 text-white">
+        <div className="relative w-full flex items-center justify-between z-20 p-4 bg-gray-800 text-white">
             <Input
                 className="border border-gray-300 rounded-lg ml-3 p-2 w-1/2 "
                 value={searchValue}

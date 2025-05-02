@@ -15,16 +15,16 @@ const Navbar = () => {
     }
 
     return (
-        <div className="relative flex items-center justify-between p-4 bg-gray-800 text-white">
+        <div className="relative flex items-center justify-between z-20 p-4 bg-gray-800 text-white">
             <Input
-                className="border border-gray-300 rounded-lg p-2 w-1/2"
+                className="border border-gray-300 rounded-lg ml-3 p-2 w-1/2 "
                 value={searchValue}
                 onChange={onSearchChangeHandle}
                 placeholder="Search"
             />
             {/* no quedaría mejor en un componenete? */}
             {searchValue.trim() !== "" && (
-                <div className="absolute top-full left-0 w-1/2 bg-gray-800 text-white shadow-lg max-h-64 overflow-y-auto">
+                <div className="absolute top-full ml-5 left-0 w-1/2 bg-gray-800 text-white shadow-lg max-h-64 overflow-y-auto">
                     <div className="p-2 bg-gray-700 text-sm font-bold text-white-300">
                         Hero
                     </div>

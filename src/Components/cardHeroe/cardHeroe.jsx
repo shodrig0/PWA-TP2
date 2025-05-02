@@ -15,40 +15,48 @@ bgCard="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZhNWE4MnBsZ2t1NmpkYW
     support:"https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt3ccd5df488163b33/6504cff7fc2ae4d7c50445c4/Support.svg?format=webply&quality=90"
   }
   return (
-    <div className="w-full max-w-xl overflow-hidden rounded-xl shadow-lg relative mx-3 my-5">
-  {/* Fondo con el GIF y capa roja */}
-  
-  <div
-    className="absolute inset-0 bg-cover bg-center bg-opacity-50"
+    <div className="relative  w-[300px] h-[385px] overflow-hidden rounded-xl shadow-lg mx-3 my-5">
+
+        {/* Fondo principal */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-opacity-50 z-0"
+          style={{ backgroundImage: `url("${bgCard}")` }}
+        ></div>
+    <div className="flex justify-center items-center aspect-square  relative hover:backdrop-blur-xs bg-white/0">
+          <img
+            src={portrait}
+            alt="portrait"
+            className="object-cover w-full h-full z-10 transform transition-transform duration-300 ease-in-out hover:scale-105"
+          />
+        </div>
+        {/* Fondo del pie */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 ">
+          <img
+            src="fondoPieCard.png"
+            alt=""
+            className="w-full h-full object-cover "
+          />
+        </div>
     
-    style={{
-      backgroundImage: `url("${bgCard}")`
-    }}
-  ></div>
-  {/* <div className="absolute inset-0 bg-green-900 opacity-60"></div> */}
-
-  {/* Contenedor de la imagen */}
-  <div className="flex justify-center items-center aspect-square z-10 relative backdrop-blur-xs bg-white/20 ">
-    <img
-      src={portrait}
-      alt="portrait"
-      className="object-cover w-full h-full"
-    />
-  </div>
-
-  {/* Pie con blur */}
-  <div className="flex items-center justify-between px-6 py-5 pr-10 backdrop-blur-ms bg-white/30 z-10 relative">
-    <h3 className="text-white font-semibold text-lg">{name}</h3>
-    <img
-      src={iconRol[role]}
-      alt="tank"
-      className="w-10 h-10 opacity-75 "
-    />
-  </div>
-</div>
-
-  
-  
+        {/* Nombre */}
+       <h3 className="absolute font-primary top-10 left-9 transform -translate-y-1/2 rotate-90 origin-left uppercase text-white font-semibold z-20 text-2xl bg-black/30 px-4 py-1 rounded-xl whitespace-nowrap">
+  {name}
+</h3>
+    
+        {/* Rol (texto e ícono) */}
+        <h3 className="absolute bottom-16 font-primary uppercase left-30 text-white font-semibold z-20 text-lg">{role}</h3>
+        <img
+          src={iconRol[role]}
+          alt="role"
+          className="absolute bottom-15 left-11 w-9 h-10 opacity-75 z-20"
+        />
+    
+        {/* Imagen principal */}
+        
+    
+        {/* Pie vacío (si lo necesitás para layout) */}
+        <div className="h-28 px-6 py-5 pr-10 relative z-10"></div>
+      </div>
   )
 }
 

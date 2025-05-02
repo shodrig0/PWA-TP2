@@ -1,5 +1,5 @@
 import React from 'react'
-import CardHeroe from './cardHeroe/CardHeroe'
+import CardHeroe from '../../cardHeroe/cardHeroe'
 
 function containerCardHeroe({ heroes }) {
   return (

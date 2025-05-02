@@ -3,5 +3,6 @@ export const NAVEGACION = {
     home: "/home",
     details: "/details/:heroId",
     detailsBase: "/details",
+    aboutUs: "/aboutus",
     pageNotFound: "*"
 }

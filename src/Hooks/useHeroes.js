@@ -30,12 +30,6 @@ const useHeroes = () => {
         }
     }, [])
 
-    // useEffect(() => {
-    //     console.log('-------')
-    //     console.log(heroes)
-    //     console.log('-------')
-    // }, [heroes])
-
     useEffect(() => {
         getHeroes()
     }, [getHeroes])

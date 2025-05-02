@@ -11,7 +11,7 @@ const useHeroes = () => {
         try {
             setLoading(true)
 
-            const url = `/api/heroes/`
+            const url = `/api/heroes`
             const resp = await fetch(url)
 
             if (!resp.ok) {

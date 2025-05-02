@@ -1,8 +1,8 @@
 // import useHeroes from "../../Hooks/
 import Header from "../../Components/Header/Header"
 import React from 'react'
-import ContainerCardHeroe from '../../Components/containerCardHeroe';
-import ContainerCardMaps from '../../Components/containerCardMaps';
+import ContainerCardHero from "../../Components/Containers/ContainerCardHero/ContainerCardHero"
+import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap"
 
 function Home() {
   // const { heroes } = useHeroes()
@@ -10,9 +10,8 @@ function Home() {
   return (
     <div>
       <Header />
-      {/* <button onClick={irDetalles}>vamos detalles</button> */}
-      <ContainerCardHeroe />
-      <ContainerCardMaps />
+      {/* <ContainerCardHero />
+      <ContainerCardMap /> */}
 
     </div>
   )

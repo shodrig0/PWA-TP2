@@ -23,7 +23,7 @@ function Footer() {
   className="h-30 transition duration-300 hover:brightness-155"
 />
         <p className="text-center text-xl">
-          &trade; &amp; &copy; 2025 Blizart Entertainment, Inc. Todos los derechos reservados. Blizzart, Overtwatch son marcas comerciales o marcas registradas de Blizzart Entertainment, Inc.
+          &trade; &amp; &copy; 2025 Blizzard Entertainment, Inc. Todos los derechos reservados. Blizzard, Overtwatch son marcas comerciales o marcas registradas de Blizzard Entertainment, Inc.
         </p>
       </div>
       <nav className="flex gap-x-6">

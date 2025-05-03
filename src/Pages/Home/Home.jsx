@@ -9,7 +9,7 @@ import Footer from "../../Components/footer/Footer";
 import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
 
 function Home() {
-  const { heroes } = useHeroes();
+  const { heroes ,loading} = useHeroes();
   const { currentPage } = usePagination();
   const heroesPorPagina = 8;
 
@@ -22,8 +22,14 @@ function Home() {
       <Header />
       <BannerHome />
       <FiltersAndOrder/>
+      {loading ? (
+        <div className="flex justify-center items-center min-h-screen">
+          <img src="/spinerOverwatch.gif" alt="Loading..." />
+        </div>
+      ) : (
       <ContainerCardHero heroes={heroesActuales} />
-      {/* <ContainerCardMap /> */}
+      // {/* <ContainerCardMap /> */}
+      )}
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
       <Footer/>
     </div>

@@ -48,7 +48,7 @@ function CardHeroe({ name, portrait, role }) {
       <img
         src={iconRol[role]}
         alt="role"
-        className="absolute bottom-13 left-12.5 w-9 h-9 opacity-75 z-20"
+        className="absolute bottom-12.5 left-12.5 w-9 h-9 opacity-75 z-20"
       />
 
       {/* Imagen principal */}

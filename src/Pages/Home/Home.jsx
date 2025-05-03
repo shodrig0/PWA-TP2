@@ -6,6 +6,7 @@ import BannerHome from "../../Components/bannerHome/bannerHome";
 import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
 import Footer from "../../Components/footer/Footer";
+import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
 
 function Home() {
   const { heroes } = useHeroes();
@@ -20,6 +21,7 @@ function Home() {
     <div className="grid place-items-center bg-black">
       <Header />
       <BannerHome />
+      <FiltersAndOrder/>
       <ContainerCardHero heroes={heroesActuales} />
       {/* <ContainerCardMap /> */}
       <BtnPaginado elementosPorPagina={heroesPorPagina} />

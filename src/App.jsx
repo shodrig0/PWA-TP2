@@ -7,21 +7,23 @@ import Details from './Pages/Details/Details';
 import Landing from './Pages/Landing/Landing';
 import PageNotFound from './Pages/Error/404';
 import PageValidationError from './Pages/Error/422';
+import AboutUs from './Components/AboutUs/AboutUs';
 import './App.css'
 
 function App() {
   // const [count, setCount] = useState(0)
   return (
     <PaginationProvider className="bg-black">
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Landing />} path={NAVEGACION.landing} />
-        <Route element={<Home />} path={NAVEGACION.home} />
-        <Route element={<Details />} path={NAVEGACION.details} />
-        <Route element={<PageNotFound />} path={NAVEGACION.pageNotFound} />
-        <Route element={<PageValidationError />} path={NAVEGACION.detailsBase} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Landing />} path={NAVEGACION.landing} />
+          <Route element={<Home />} path={NAVEGACION.home} />
+          <Route element={<Details />} path={NAVEGACION.details} />
+          <Route element={<PageNotFound />} path={NAVEGACION.pageNotFound} />
+          <Route element={<PageValidationError />} path={NAVEGACION.detailsBase} />
+          <Route element={<AboutUs />} path={NAVEGACION.aboutUs} />
+        </Routes>
+      </BrowserRouter>
     </PaginationProvider>
   )
 }

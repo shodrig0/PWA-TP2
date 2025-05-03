@@ -13,15 +13,16 @@ function App() {
   // const [count, setCount] = useState(0)
   return (
     <PaginationProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Landing />} path={NAVEGACION.landing} />
-        <Route element={<Home />} path={NAVEGACION.home} />
-        <Route element={<Details />} path={NAVEGACION.details} />
-        <Route element={<PageNotFound />} path={NAVEGACION.pageNotFound} />
-        <Route element={<PageValidationError />} path={NAVEGACION.detailsBase} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Landing />} path={NAVEGACION.landing} />
+          <Route element={<Home />} path={NAVEGACION.home} />
+          <Route element={<Details />} path={NAVEGACION.details} />
+          <Route element={<PageNotFound />} path={NAVEGACION.pageNotFound} />
+          <Route element={<PageValidationError />} path={NAVEGACION.detailsBase} />
+
+        </Routes>
+      </BrowserRouter>
     </PaginationProvider>
   )
 }

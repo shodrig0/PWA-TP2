@@ -1,9 +1,9 @@
 export const NAVEGACION = {
     landing: "/",
     home: "/home",
-    details: "/details",
-    detailsHero: "/details/:heroId",
-    detailsMap: "/details/:name",
+    details: "/details/:heroId",
+    detailsBase: "/details",
+    aboutUs: "/aboutus",
     pageNotFound: "*"
 }
 

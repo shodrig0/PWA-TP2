@@ -10,7 +10,7 @@ import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
 import ContainersFilter from "../../Components/Containers/ContainerFilters/ContainersFilter";
 
 function Home() {
-  const { heroes ,loading} = useHeroes();
+  const { heroes, loading } = useHeroes();
   const { currentPage } = usePagination();
   const heroesPorPagina = 8;
 
@@ -29,11 +29,11 @@ function Home() {
           <img src="/spinerOverwatch.gif" alt="Loading..." />
         </div>
       ) : (
-      <ContainerCardHero heroes={heroesActuales} />
-      // {/* <ContainerCardMap /> */}
+        <ContainerCardHero heroes={heroesActuales} />
       )}
+      <ContainerCardMap />
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
-      <Footer/>
+      <Footer />
     </div>
   )
 }

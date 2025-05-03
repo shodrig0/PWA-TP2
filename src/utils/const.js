@@ -1,7 +1,10 @@
 export const NAVEGACION = {
     landing: "/",
     home: "/home",
-    details: "/details/:heroId",
-    detailsBase: "/details",
+    details: "/details",
+    detailsHero: "/details/:heroId",
+    detailsMap: "/details/:name",
     pageNotFound: "*"
 }
+
+// acomodar rutas

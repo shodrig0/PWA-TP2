@@ -13,7 +13,7 @@ import './App.css'
 function App() {
   // const [count, setCount] = useState(0)
   return (
-    <PaginationProvider>
+    <PaginationProvider className="bg-black">
       <BrowserRouter>
         <Routes>
           <Route element={<Landing />} path={NAVEGACION.landing} />
@@ -21,7 +21,6 @@ function App() {
           <Route element={<Details />} path={NAVEGACION.details} />
           <Route element={<PageNotFound />} path={NAVEGACION.pageNotFound} />
           <Route element={<PageValidationError />} path={NAVEGACION.detailsBase} />
-          <Route element={<AboutUs />} path={NAVEGACION.aboutUs} />
         </Routes>
       </BrowserRouter>
     </PaginationProvider>

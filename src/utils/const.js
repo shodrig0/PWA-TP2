@@ -6,3 +6,5 @@ export const NAVEGACION = {
     aboutUs: "/aboutus",
     pageNotFound: "*"
 }
+
+// acomodar rutas

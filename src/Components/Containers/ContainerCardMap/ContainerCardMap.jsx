@@ -1,58 +1,24 @@
 import React from 'react'
-import CardMap from '../../cardMaps/cardMaps'
+import CardMap from '../../cardMap/CardMap'
 
-function ContainerCardMap() {
-  const Maps = [
-    {
-      name: "Hanamura",
-      screenshot: "https://overfast-api.tekrop.fr/static/maps/hanamura.jpg",
-      gamemodes: ["assault"],
-      location: "Tokyo, Japan",
-      country_code: "JP"
-    },
-    {
-      name: "Horizon Lunar Colony",
-      screenshot: "https://overfast-api.tekrop.fr/static/maps/horizon.jpg",
-      gamemodes: ["assault"],
-      location: "Earth's moon",
-      country_code: null
-    },
-    {
-      name: "Paris",
-      screenshot: "https://overfast-api.tekrop.fr/static/maps/paris.jpg",
-      gamemodes: ["assault"],
-      location: "Paris, France",
-      country_code: "FR"
-    },
-    {
-      name: "Temple of Anubis",
-      screenshot: "https://overfast-api.tekrop.fr/static/maps/anubis.jpg",
-      gamemodes: ["assault"],
-      location: "Giza Plateau, Egypt",
-      country_code: "EG"
-    },
-    {
-      name: "Volskaya Industries",
-      screenshot: "https://overfast-api.tekrop.fr/static/maps/volskaya.jpg",
-      gamemodes: ["assault"],
-      location: "St. Petersburg, Russia",
-      country_code: "RU"
-    }
-  ];
-
+function ContainerCardMap({ maps }) {
   return (
-    <div className="px-4 bg-black">
-      {Maps.map((mapa) => (
-        <CardMap
-          key={mapa.name}
-          name={mapa.name}
-          screenshot={mapa.screenshot}
-          gamemodes={mapa.gamemodes}
-        />
-      ))}
+    <div className="min-h-screen bg-black px-4 sm:px-8 py-6 flex justify-center">
+      <div
+        className="w-[80%] grid gap-6"
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}
+      >
+        {maps.map((map) => (
+          <CardMap
+            key={map.id}
+            name={map.name || "Mapa sin nombre"}
+            // screenshot={map.screenshot || "/default-map.jpg"} // ✅ nombre del campo correcto según tu componente
+            // gamemodes={map.gamemodes}   // ✅ se pasa el array de modos de juego
+          />
+        ))}
+      </div>
     </div>
-  );
+  )
 }
-
 
 export default ContainerCardMap

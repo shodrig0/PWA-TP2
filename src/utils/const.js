@@ -3,5 +3,7 @@ export const NAVEGACION = {
     home: "/home",
     details: "/details/:heroId",
     detailsBase: "/details",
+    maps: '/maps',
+    mapDetail: '/map/:name',
     pageNotFound: "*"
 }

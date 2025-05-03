@@ -51,8 +51,10 @@ const Navbar = () => {
                 </div>
             )}
             {/* no funcan tdodavia */}
+            <Button className={``} onClick={() => navigate(NAVEGACION.home)} name={`Home`} />
             <Button className={``} onClick={() => { }} name={`Favourites`} />
             <Button className={``} onClick={() => { }} name={`About us`} />
+            <Button className={``} onClick={() => navigate(NAVEGACION.maps)} name={`Maps`} />
             <Button />
         </div>
     )

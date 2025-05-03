@@ -28,8 +28,8 @@ function Home() {
         </div>
       ) : (
         <ContainerCardHero heroes={heroesActuales} />
-        // {/* <ContainerCardMap /> */}
       )}
+      <ContainerCardMap />
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
       <Footer />
     </div>

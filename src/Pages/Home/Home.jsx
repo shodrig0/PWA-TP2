@@ -23,13 +23,6 @@ function Home() {
     <div className="grid place-items-center bg-black">
       <Header />
       <BannerHome />
-<<<<<<< HEAD
-      <ContainerCardHero heroes={heroesActuales} />
-      <BtnPaginado elementosPorPagina={heroesPorPagina} />
-      {/* <ContainerCardMap maps={maps} /> 👈 Aquí se agregan los mapas */}
-      {/* <Route path="/maps" element={<MapsPage />} /> */}
-
-=======
       <FiltersAndOrder />
       {loading ? (
         <div className="flex justify-center items-center min-h-screen">
@@ -41,7 +34,6 @@ function Home() {
       <ContainerCardMap />
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
       <Footer />
->>>>>>> main
     </div>
   )
 }

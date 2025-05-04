@@ -13,7 +13,6 @@ function Home() {
   const { currentPage } = usePagination();
   const heroesPorPagina = 8;
 
-  // Cálculo de índices
   const indexUltimoHeroe = currentPage * heroesPorPagina;
   const indexPrimerHeroe = indexUltimoHeroe - heroesPorPagina;
   const heroesActuales = heroes.slice(indexPrimerHeroe, indexUltimoHeroe);
@@ -29,7 +28,7 @@ function Home() {
       ) : (
         <ContainerCardHero heroes={heroesActuales} />
       )}
-      <ContainerCardMap />
+      {/* <ContainerCardMap /> */}
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
       <Footer />
     </div>

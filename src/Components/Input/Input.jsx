@@ -4,8 +4,8 @@ const Input = ({ className, value, onChange, placeholder }) => {
         <input
             type="text"
             className={className}
-            value={value || ""}
-            onChange={(e) => onChange(e.target.value)}
+            value={value}
+            onChange={onChange}
             placeholder={placeholder}
             autoFocus />
     )

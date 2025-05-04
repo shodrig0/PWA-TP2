@@ -1,7 +1,11 @@
 import React from 'react'
 import CardHeroe from '../../cardHeroe/cardHeroe'
+import useHeroes from '../../../Hooks/useHeroes'
 
-function containerCardHeroe({ heroes }) {
+function ContainerCardHero() {
+
+  const { heroes } = useHeroes()
+
   return (
     <div className="min-h-screen w-full bg-black px-4 sm:px-8 py-6 flex justify-center">
       <div className="w-[80%] grid gap-6"
@@ -21,4 +25,4 @@ function containerCardHeroe({ heroes }) {
   )
 }
 
-export default containerCardHeroe
+export default ContainerCardHero

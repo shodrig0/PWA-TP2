@@ -58,14 +58,21 @@ const useHeroes = () => {
         setFilteredHeroes(sorted);
     };
 
+    const getHeroById = useCallback((id) => {
+        if (!id) return null
 
-
+        const foundHero = heroes.find(hero => String(hero.id) === String(id))
+        return foundHero || null
+    }, [heroes])
 
     return {
         heroes: filteredHeroes,
+        allHeroes: heroes,
         searchValue,
         onSearchChangeHandle,
-        loading
+        loading,
+        orderAlphabetically,
+        getHeroById
     }
 
 }

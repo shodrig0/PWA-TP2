@@ -7,6 +7,7 @@ import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
 import Footer from "../../Components/footer/Footer";
 import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
+import ContainersFilter from "../../Components/Containers/ContainerFilters/ContainersFilter";
 
 function Home() {
   const { heroes, loading } = useHeroes();
@@ -21,7 +22,8 @@ function Home() {
     <div className="grid place-items-center bg-black">
       <Header />
       <BannerHome />
-      <FiltersAndOrder />
+      <FiltersAndOrder/>
+      <ContainersFilter />
       {loading ? (
         <div className="flex justify-center items-center min-h-screen">
           <img src="/spinerOverwatch.gif" alt="Loading..." />

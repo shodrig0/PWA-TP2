@@ -64,6 +64,7 @@ const useHeroes = () => {
     return {
         heroes: filteredHeroes,
         searchValue,
+        orderAlphabetically,
         onSearchChangeHandle,
         loading
     }

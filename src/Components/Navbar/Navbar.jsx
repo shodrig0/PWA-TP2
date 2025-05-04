@@ -14,15 +14,19 @@ const Navbar = () => {
         navigate(url)
     }
 
+    const handleGoToAboutUs = () => {
+        const urlAboutUs = NAVEGACION.aboutUs
+        navigate(urlAboutUs)
+    }
+
     return (
-        <div className="relative flex items-center justify-between z-20 p-4 bg-gray-800 text-white">
+        <div className="relative w-full flex items-center justify-between z-20 p-4 bg-gray-800 text-white">
             <Input
                 className="border border-gray-300 rounded-lg ml-3 p-2 w-1/2 "
                 value={searchValue}
                 onChange={onSearchChangeHandle}
                 placeholder="Search"
             />
-            {/* no quedaría mejor en un componenete? */}
             {searchValue.trim() !== "" && (
                 <div className="absolute top-full ml-5 left-0 w-1/2 bg-gray-800 text-white shadow-lg max-h-64 overflow-y-auto">
                     <div className="p-2 bg-gray-700 text-sm font-bold text-white-300">
@@ -53,8 +57,12 @@ const Navbar = () => {
             {/* no funcan tdodavia */}
             <Button className={``} onClick={() => navigate(NAVEGACION.home)} name={`Home`} />
             <Button className={``} onClick={() => { }} name={`Favourites`} />
+<<<<<<< HEAD
             <Button className={``} onClick={() => { }} name={`About us`} />
             <Button className={``} onClick={() => navigate(NAVEGACION.maps)} name={`Maps`} />
+=======
+            <Button className={``} onClick={handleGoToAboutUs} name={`About us`} />
+>>>>>>> main
             <Button />
         </div>
     )

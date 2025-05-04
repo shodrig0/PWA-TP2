@@ -6,9 +6,11 @@ import ContainerCardHero from "../../Components/Containers/ContainerCardHero/Con
 import BannerHome from "../../Components/bannerHome/bannerHome";
 import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
+import Footer from "../../Components/footer/Footer";
+import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
 
 function Home() {
-  const { heroes } = useHeroes();
+  const { heroes, loading } = useHeroes();
   const { currentPage } = usePagination();
   // const { maps } = useMaps();
   const heroesPorPagina = 8;
@@ -18,14 +20,28 @@ function Home() {
   const indexPrimerHeroe = indexUltimoHeroe - heroesPorPagina;
   const heroesActuales = heroes.slice(indexPrimerHeroe, indexUltimoHeroe);
   return (
-    <div>
+    <div className="grid place-items-center bg-black">
       <Header />
       <BannerHome />
+<<<<<<< HEAD
       <ContainerCardHero heroes={heroesActuales} />
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
       {/* <ContainerCardMap maps={maps} /> 👈 Aquí se agregan los mapas */}
       {/* <Route path="/maps" element={<MapsPage />} /> */}
 
+=======
+      <FiltersAndOrder />
+      {loading ? (
+        <div className="flex justify-center items-center min-h-screen">
+          <img src="/spinerOverwatch.gif" alt="Loading..." />
+        </div>
+      ) : (
+        <ContainerCardHero heroes={heroesActuales} />
+      )}
+      <ContainerCardMap />
+      <BtnPaginado elementosPorPagina={heroesPorPagina} />
+      <Footer />
+>>>>>>> main
     </div>
   )
 }

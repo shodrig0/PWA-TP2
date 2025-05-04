@@ -15,21 +15,21 @@ function CardHeroe({ name, portrait, role }) {
     support: "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt3ccd5df488163b33/6504cff7fc2ae4d7c50445c4/Support.svg?format=webply&quality=90"
   }
   return (
-    <div className="relative  w-[300px] h-[385px] overflow-hidden rounded-xl shadow-lg mx-3 my-5">
+    <div className="relative  w-[300px] h-[384px] overflow-hidden rounded-xl shadow-lg mx-3 my-5">
 
       {/* Fondo principal */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-opacity-50 z-0"
         style={{ backgroundImage: `url("${bgCard}")` }}
       ></div>
-      <div className="flex justify-center items-center aspect-square  relative hover:backdrop-blur-xs bg-white/0">
+      <div className="flex justify-center items-center aspect-square  relative  bg-white/0">
         <img
           src={portrait}
           alt="portrait"
           className="object-cover w-full h-full z-10 transform transition-transform duration-300 ease-in-out hover:scale-105"
         />
       </div>
-      {/* Fondo del pie */}
+     
       <div className="absolute bottom-0 left-0 right-0 z-10 ">
         <img
           src="fondoPieCard.png"
@@ -38,17 +38,17 @@ function CardHeroe({ name, portrait, role }) {
         />
       </div>
 
-      {/* Nombre */}
-      <h3 className="absolute font-primary top-10 left-9 transform -translate-y-1/2 rotate-90 origin-left uppercase text-white font-semibold z-20 text-2xl bg-black/30 px-4 py-1 rounded-xl whitespace-nowrap">
-        {name}
-      </h3>
+      
+      <h3 className="absolute top-1/2 right-7 transform -translate-y-1/2 rotate-90 origin-right uppercase text-white font-semibold z-20 text-2xl bg-black/30 px-4 py-1 rounded-xl whitespace-nowrap transition duration-300 hover:brightness-125">
+  {name}
+</h3>
+      
 
-      {/* Rol (texto e ícono) */}
-      <h3 className="absolute bottom-16 font-primary uppercase left-30 text-white font-semibold z-20 text-lg">{role}</h3>
+      <h3 className="absolute bottom-12 font-primary uppercase left-30 text-white font-semibold z-20 text-lg">{role}</h3>
       <img
         src={iconRol[role]}
         alt="role"
-        className="absolute bottom-15 left-11 w-9 h-10 opacity-75 z-20"
+        className="absolute bottom-12.5 left-12.5 w-9 h-9 opacity-75 z-20"
       />
 
       {/* Imagen principal */}

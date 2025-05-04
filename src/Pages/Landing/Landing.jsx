@@ -2,9 +2,11 @@ import React from 'react'
 import { Boxes, Search, Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { NAVEGACION } from '../../utils/const';
+import useHeroes from '../../Hooks/useHeroes';
 
 function Landing() {
   const navigate = useNavigate();
+  const {heroes }=useHeroes()
 
   const goToHome = () => {
     navigate(NAVEGACION.home)

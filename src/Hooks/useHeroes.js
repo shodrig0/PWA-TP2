@@ -7,6 +7,7 @@ const useHeroes = () => {
     const [searchValue, setSearchValue] = useState("")
     const [loading, setLoading] = useState(false)
 
+
     const getHeroes = useCallback(async () => {
         try {
             setLoading(true)
@@ -47,9 +48,18 @@ const useHeroes = () => {
         setSearchValue(value)
     }
 
-    // const onSearchClickHandle = () => {
-    //     getHeroes()
-    // }
+    const orderAlphabetically = (order = 'asc') => {
+        const sorted = [...filteredHeroes].sort((a, b) => {
+            return order === 'asc'
+                ? a.name.localeCompare(b.name)
+                : b.name.localeCompare(a.name);
+        });
+
+        setFilteredHeroes(sorted);
+    };
+
+
+
 
     return {
         heroes: filteredHeroes,

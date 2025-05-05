@@ -15,7 +15,8 @@ const useHeroes = () => {
         try {
             setLoading(true)
 
-            const url = `${import.meta.env.VITE_API_URL}/heroes`
+            // const url = `${import.meta.env.VITE_API_URL}/heroes`
+            const url = `/api/heroes`
             const resp = await fetch(url)
 
             if (!resp.ok) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import CardHeroe from '../../CardHeroe/CardHeroe'
+import CardHeroe from '../../HeroCard/CardHeroe'
 import useHeroes from '../../../Hooks/useHeroes'
 
 function ContainerCardHeroe({ heroes }) {

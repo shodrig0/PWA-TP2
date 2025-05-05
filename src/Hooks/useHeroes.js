@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from "react"
+import { useNavigate } from "react-router-dom"
+import { NAVEGACION } from "../utils/const"
 
 const useHeroes = () => {
 
@@ -7,6 +9,7 @@ const useHeroes = () => {
     const [searchValue, setSearchValue] = useState("")
     const [loading, setLoading] = useState(false)
 
+    const navigate = useNavigate()
 
     const getHeroes = useCallback(async () => {
         try {
@@ -35,15 +38,6 @@ const useHeroes = () => {
         getHeroes()
     }, [getHeroes])
 
-    useEffect(() => {
-        if (searchValue.trim() === "") {
-            setFilteredHeroes(heroes)
-        } else {
-            const filtered = heroes.filter((hero) => hero.name.toLowerCase().startsWith(searchValue.toLowerCase()))
-            setFilteredHeroes(filtered)
-        }
-    }, [searchValue, heroes])
-
     const onSearchChangeHandle = (value) => {
         setSearchValue(value)
     }
@@ -66,6 +60,10 @@ const useHeroes = () => {
         }
     }
 
+    const handleHeroClick = (heroId) => {
+        const url = NAVEGACION.heroDetails.replace(':heroId', heroId)
+        navigate(url)
+    }
 
     return {
         heroes: filteredHeroes,
@@ -73,7 +71,8 @@ const useHeroes = () => {
         onRoleChangeHandle,
         orderAlphabetically,
         onSearchChangeHandle,
-        loading
+        loading,
+        handleHeroClick
     }
 
 }

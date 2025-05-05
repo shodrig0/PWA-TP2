@@ -18,9 +18,10 @@ function App() {
         <Routes>
           <Route element={<Landing />} path={NAVEGACION.landing} />
           <Route element={<Home />} path={NAVEGACION.home} />
-          <Route element={<Details />} path={NAVEGACION.details} />
+          <Route path={NAVEGACION.heroDetails} element={<Details />} />
+          <Route path={NAVEGACION.mapDetails} element={<Details />} />
           <Route element={<PageNotFound />} path={NAVEGACION.pageNotFound} />
-          <Route element={<PageValidationError />} path={NAVEGACION.detailsBase} />
+          <Route element={<PageValidationError />} path={NAVEGACION.details} />
           <Route element={<AboutUs />} path={NAVEGACION.aboutUs} />
         </Routes>
       </BrowserRouter>

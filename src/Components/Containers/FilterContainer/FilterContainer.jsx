@@ -1,7 +1,7 @@
-import FilterAndOrder from "../../filtersAndOrder/filtersAndOrder";
-import SelectFilter from "../../selectFilter/SelectFilter";
+import FilterAndOrder from "../../FiltersAndOrder/filtersAndOrder";
+import SelectFilter from "../../SelectFilter/SelectFilter";
 
-const FilterContainer = ({ onOrderChange ,onRoleChange}) => {
+const FilterContainer = ({ onOrderChange, onRoleChange }) => {
 
   const roleOptions = [
     { value: "", label: "Todos los roles" },
@@ -16,8 +16,8 @@ const FilterContainer = ({ onOrderChange ,onRoleChange}) => {
   ];
   return (
     <div className="flex justify-center">
-    <SelectFilter options={roleOptions} onChange={onRoleChange}/>
-    <SelectFilter options={orderOptions} onChange={onOrderChange}/>
+      <SelectFilter options={roleOptions} onChange={onRoleChange} />
+      <SelectFilter options={orderOptions} onChange={onOrderChange} />
     </div>
   );
 };

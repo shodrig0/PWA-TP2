@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePagination } from '../../context/Pagination';
+import { usePagination } from '../../Context/Pagination';
 
 function BtnPaginado({ elementosPorPagina, totalItems }) {
   const { currentPage, setCurrentPage } = usePagination();

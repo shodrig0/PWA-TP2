@@ -1,7 +1,11 @@
 import React from 'react'
 import CardMap from '../../cardMaps/CardMaps'
+import useMaps from '../../../Hooks/useMaps'
 
 function ContainerCardMap({ maps }) {
+
+  const { handleMapClick } = useMaps()
+
   return (
     <div className="w-full flex justify-center mt-6">
       <div

@@ -67,7 +67,6 @@ const useHeroes = () => {
     }
 
 
-
     return {
         heroes: filteredHeroes,
         searchValue,

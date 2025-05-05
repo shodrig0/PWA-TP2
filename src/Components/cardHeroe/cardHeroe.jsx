@@ -1,6 +1,15 @@
 import React from 'react'
+import { NAVEGACION } from '../../utils/const'; 
+import { useNavigate } from 'react-router-dom';
 
 function CardHeroe({ name, portrait, role }) {
+
+  const navigate = useNavigate();
+
+  const handleCardClick = (name) => {
+      const url = NAVEGACION.details.replace(':heroId', encodeURIComponent(name));
+      navigate(url);
+  };
   let bgCard = "";
   if (role == "tank") {
     bgCard = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Via2t5ZTlrcHFvbng4dW51cG55ZWZjNndiY2wydWp3bHM4d3Z3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cMhglZMLwT8e1jYkfC/giphy.gif"
@@ -15,9 +24,9 @@ function CardHeroe({ name, portrait, role }) {
     support: "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt3ccd5df488163b33/6504cff7fc2ae4d7c50445c4/Support.svg?format=webply&quality=90"
   }
   return (
-    <div className="relative border-4 border-yellow-400  w-[350px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto  shadow-lg my-5">
+<div onClick={() => handleCardClick(name)} className="cursor-pointer">
 
-      {/* Fondo principal */}
+  <div className="relative w-[350px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">
       <div
         className="absolute inset-0 bg-cover bg-center bg-opacity-50 z-0"
         style={{ backgroundImage: `url("${bgCard}")` }}
@@ -39,7 +48,7 @@ function CardHeroe({ name, portrait, role }) {
       </div>
 
       
-      <h3 className="absolute top-1/2 right-7 transform -translate-y-1/2 rotate-90 origin-right uppercase text-white font-semibold z-20 text-2xl md:text-sm bg-black/30 px-4 py-1 rounded-xl whitespace-nowrap ">
+      <h3 className="absolute font-primary top-1/2 right-7 transform -translate-y-1/2 rotate-90 origin-right uppercase text-white font-semibold z-20 text-2xl md:text-sm bg-black/30 px-4 py-1 rounded-xl whitespace-nowrap ">
   {name}
 </h3>
       
@@ -51,6 +60,7 @@ function CardHeroe({ name, portrait, role }) {
         className="absolute bottom-15.25 left-15 md:left-8.5 md:bottom-8.5  w-10 h-10  md:w-6 md:h-6  opacity-75 z-20"
       />
       <div className="h-28 px-6 py-5 pr-10 relative z-10"></div>
+    </div>
     </div>
   )
 }

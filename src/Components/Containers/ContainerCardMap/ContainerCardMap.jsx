@@ -1,15 +1,20 @@
 import React from 'react'
 import CardMap from '../../cardMaps/CardMaps'
-import useMaps from '../../../Hooks/useMaps'
 
-function ContainerCardMap() {
-
-  const { maps } = useMaps()
-
+function ContainerCardMap({ maps }) {
   return (
-    <div>
-      <div className="w-[80%] grid gap-6"
-        style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}
+    <div className="w-full flex justify-center mt-6">
+      <div
+        className="
+          grid 
+          grid-cols-1 
+          sm:grid-cols-2 
+          md:grid-cols-3 
+          lg:grid-cols-4 
+          gap-6 
+          w-[90%] 
+          max-w-7xl
+        "
       >
         {maps.map((mapa) => (
           <CardMap
@@ -24,6 +29,5 @@ function ContainerCardMap() {
     </div>
   )
 }
-
 
 export default ContainerCardMap

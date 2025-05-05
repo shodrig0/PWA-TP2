@@ -1,5 +1,5 @@
 import React from 'react'
-import CardMap from '../../cardMaps/CardMaps'
+import CardMap from '../../CardMaps/CardMaps'
 import useMaps from '../../../Hooks/useMaps'
 
 function ContainerCardMap({ maps }) {

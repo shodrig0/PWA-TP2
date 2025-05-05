@@ -43,7 +43,8 @@ const Navbar = () => {
 
             {searchValue.trim() !== "" && (
                 <div className="absolute top-full ml-5 left-0 w-1/2 bg-gray-800 text-white shadow-lg max-h-64 overflow-y-auto">
-                    <div className="p-2 bg-gray-700 text-sm font-bold text-white-300">
+                    {/* Sección de héroes */}
+                    <div className="p-2 bg-gray-700 text-sm font-bold text-white-300 font-primary">
                         Heroes
                     </div>
                     {filteredHeroes.length > 0 ? (
@@ -89,8 +90,9 @@ const Navbar = () => {
                 </div>
             )}
 
-            <Button className={``} onClick={() => { }} name={`Favourites`} />
-            <Button className={``} onClick={handleGoToAboutUs} name={`About us`} />
+            {/* Botones de navegación */}
+            <Button className={`font-primary`} onClick={() => { }} name={`FAVOURITES`} />
+            <Button className={`font-primary`} onClick={handleGoToAboutUs} name={`ABOUT US`} />
             <Button />
         </div>
     )

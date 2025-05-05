@@ -1,45 +1,90 @@
 import useHeroes from "../../Hooks/useHeroes";
-import Header from "../../Components/Header/Header"
-import ContainerCardHero from "../../Components/Containers/ContainerCardHero/ContainerCardHero"
-import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap"
+import useMaps from "../../Hooks/useMaps";
+import Header from "../../Components/Header/Header";
+import ContainerCardHero from "../../Components/Containers/ContainerCardHero/ContainerCardHero";
+import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap";
 import BannerHome from "../../Components/bannerHome/bannerHome";
 import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
 import Footer from "../../Components/footer/Footer";
-import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
+import { useState, useEffect } from "react";
 
 function Home() {
   const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
+  const { maps } = useMaps();
+  const { currentPage, setCurrentPage } = usePagination();
 
 
-  const { currentPage } = usePagination();
-  const heroesPorPagina = 8;
+  const [isHeroe, setIsHeroe] = useState(true);
+  const elementosPorPagina = 8;
 
-  // Cálculo de índices
-  const indexUltimoHeroe = currentPage * heroesPorPagina;
-  const indexPrimerHeroe = indexUltimoHeroe - heroesPorPagina;
-  const heroesActuales = heroes.slice(indexPrimerHeroe, indexUltimoHeroe);
+  const indexUltimoItem = currentPage * elementosPorPagina;
+  const indexPrimerItem = indexUltimoItem - elementosPorPagina;
+
+  const heroesActuales = heroes.slice(indexPrimerItem, indexUltimoItem);
+  const mapsActuales = maps.slice(indexPrimerItem, indexUltimoItem);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [heroes, maps]);
   return (
     <div className="grid place-items-center bg-black">
       <Header />
       <BannerHome />
-      <FilterContainer
-        onOrderChange={orderAlphabetically}
-        onRoleChange={onRoleChangeHandle}
-      />
-      {loading ? (
-        <div className="flex justify-center items-center min-h-screen">
-          <img src="/spinerOverwatch.gif" alt="Loading..." />
-        </div>
+
+      <div className="flex gap-4 my-4">
+        <button
+          className={`px-4 py-2 rounded ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
+          onClick={() => setIsHeroe(true)}
+        >
+          Heroes
+        </button>
+        <button
+          className={`px-4 py-2 rounded ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
+          onClick={() => setIsHeroe(false)}
+        >
+          Maps
+        </button>
+      </div>
+
+      {isHeroe ? (
+        <>
+          <FilterContainer
+            onOrderChange={orderAlphabetically}
+            onRoleChange={onRoleChangeHandle}
+          />
+          {loading ? (
+            <div className="flex justify-center items-center min-h-screen">
+              <img src="/spinerOverwatch.gif" alt="Loading..." />
+            </div>
+          ) : (
+            <ContainerCardHero heroes={heroesActuales} />
+          )}
+
+        </>
       ) : (
-        <ContainerCardHero heroes={heroesActuales} />
+        <>
+          <FilterContainer
+          // onOrderChange={orderAlphabetically}
+          // onRoleChange={onRoleChangeHandle}
+          />
+          {loading ? (
+            <div className="flex justify-center items-center min-h-screen">
+              <img src="/spinerOverwatch.gif" alt="Loading..." />
+            </div>
+          ) : (
+            <ContainerCardMap maps={mapsActuales} />
+          )}
+        </>
       )}
-      {/* <ContainerCardMap /> */}
-      <BtnPaginado elementosPorPagina={heroesPorPagina} />
+      <BtnPaginado
+        elementosPorPagina={elementosPorPagina}
+        totalItems={isHeroe ? heroes.length : maps.length}
+      />
+
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

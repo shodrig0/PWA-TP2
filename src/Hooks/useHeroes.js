@@ -65,7 +65,6 @@ const useHeroes = () => {
         navigate(url)
     }
 
-
     return {
         heroes: filteredHeroes,
         searchValue,

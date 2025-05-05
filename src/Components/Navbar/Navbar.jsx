@@ -14,12 +14,12 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     const handleHeroClick = (heroId) => {
-        const url = NAVEGACION.details.replace(':heroId', heroId)
+        const url = NAVEGACION.heroDetails.replace(':heroId', heroId)
         navigate(url)
     }
 
     const handleMapClick = (mapId) => {
-        const url = NAVEGACION.details.replace(':mapId', mapId)
+        const url = NAVEGACION.mapDetails.replace(':mapId', mapId)
         navigate(url)
     }
 

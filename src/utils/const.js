@@ -2,8 +2,8 @@ export const NAVEGACION = {
     landing: "/",
     home: "/home",
     details: "/details",
-    detailsHero: "/heroes/:heroId",
-    detailsMap: "/maps/:name",
+    heroDetails: '/hero/:heroId',
+    mapDetails: '/map/:mapId',
     aboutUs: "/aboutus",
     pageNotFound: "*"
 }

@@ -35,15 +35,6 @@ const useHeroes = () => {
         getHeroes()
     }, [getHeroes])
 
-    useEffect(() => {
-        if (searchValue.trim() === "") {
-            setFilteredHeroes(heroes)
-        } else {
-            const filtered = heroes.filter((hero) => hero.name.toLowerCase().startsWith(searchValue.toLowerCase()))
-            setFilteredHeroes(filtered)
-        }
-    }, [searchValue, heroes])
-
     const onSearchChangeHandle = (value) => {
         setSearchValue(value)
     }

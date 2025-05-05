@@ -5,7 +5,7 @@ const Input = ({ className, value, onChange, placeholder }) => {
             type="text"
             className={className}
             value={value || ""}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={onChange}
             placeholder={placeholder}
             autoFocus />
     )

@@ -1,5 +1,6 @@
 
 import { NAVEGACION } from '../../utils/const' // ?
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
@@ -8,24 +9,19 @@ import useMaps from "../../Hooks/useMaps"
 
 
 const Navbar = () => {
-    const { heroes, searchValue, onSearchChangeHandle, loading } = useHeroes()
-    const { maps } = useMaps()
+    const { heroes, handleHeroClick } = useHeroes()
+    const { maps, handleMapClick } = useMaps()
+    const [searchValue, setSearchValue] = useState("")
 
     const navigate = useNavigate()
-
-    const handleHeroClick = (heroId) => {
-        const url = NAVEGACION.heroDetails.replace(':heroId', heroId)
-        navigate(url)
-    }
-
-    const handleMapClick = (mapId) => {
-        const url = NAVEGACION.mapDetails.replace(':mapId', mapId)
-        navigate(url)
-    }
 
     const handleGoToAboutUs = () => {
         const urlAboutUs = NAVEGACION.aboutUs
         navigate(urlAboutUs)
+    }
+
+    const onSearchChangeHandle = (e) => {
+        setSearchValue(e.target.value)
     }
 
     const filteredHeroes = heroes.filter((hero) =>
@@ -50,9 +46,7 @@ const Navbar = () => {
                     <div className="p-2 bg-gray-700 text-sm font-bold text-white-300">
                         Heroes
                     </div>
-                    {loading ? (
-                        <p className="p-2 text-gray-400">Loading...</p>
-                    ) : filteredHeroes.length > 0 ? (
+                    {filteredHeroes.length > 0 ? (
                         filteredHeroes.map((hero) => (
                             <div
                                 key={hero.name}
@@ -74,9 +68,7 @@ const Navbar = () => {
                     <div className="p-2 bg-gray-700 text-sm font-bold text-white-300">
                         Maps
                     </div>
-                    {loading ? (
-                        <p className="p-2 text-gray-400">Loading...</p>
-                    ) : filteredMaps.length > 0 ? (
+                    {filteredMaps.length > 0 ? (
                         filteredMaps.map((map) => (
                             <div
                                 key={map.name}

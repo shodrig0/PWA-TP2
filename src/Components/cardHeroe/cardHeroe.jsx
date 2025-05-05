@@ -29,7 +29,7 @@ function CardHeroe({ name, portrait, role }) {
           className="object-cover w-full h-full z-10 transform transition-transform duration-300 ease-in-out hover:scale-105"
         />
       </div>
-     
+
       <div className="absolute bottom-0 left-0 right-0 z-10 ">
         <img
           src="fondoPieCard.png"
@@ -38,11 +38,11 @@ function CardHeroe({ name, portrait, role }) {
         />
       </div>
 
-      
+
       <h3 className="absolute top-1/2 right-7 transform -translate-y-1/2 rotate-90 origin-right uppercase text-white font-semibold z-20 text-2xl md:text-sm bg-black/30 px-4 py-1 rounded-xl whitespace-nowrap ">
-  {name}
-</h3>
-      
+        {name}
+      </h3>
+
 
       <h3 className="absolute bottom-15.5 left-36 md:bottom-9  md:left-21 font-primary uppercase text-white font-semibold z-20 text-xm md:text-xs">{role}</h3>
       <img

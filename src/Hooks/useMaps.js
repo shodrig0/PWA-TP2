@@ -1,7 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
+import { useNavigate } from "react-router-dom"
+import { NAVEGACION } from "../utils/const"
 
 function useMaps() {
     const [maps, setMaps] = useState([])
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         async function fetchMaps() {
@@ -22,7 +26,31 @@ function useMaps() {
         fetchMaps()
     }, [])
 
-    return { maps }
+
+    const getMapByName = useCallback((name) => {
+        if (!name) {
+            console.warn("getMapByName: El parámetro 'name' está vacío o es undefined")
+            return null
+        }
+
+        const foundMap = maps.find(map => {
+            const nameMatches = map.name.toLowerCase() === name.toLowerCase().trim()
+            return nameMatches
+        })
+
+        if (!foundMap) {
+            console.warn(`No se encontró un mapa con el nombre '${name}'`)
+        }
+
+        return foundMap || null
+    }, [maps])
+
+    const handleMapClick = (mapId) => {
+        const url = NAVEGACION.mapDetails.replace(':name', mapId)
+        navigate(url)
+    }
+
+    return { maps, getMapByName, handleMapClick }
 }
 
 export default useMaps

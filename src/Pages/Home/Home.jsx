@@ -10,7 +10,9 @@ import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
 
 function Home() {
-  const { heroes, loading,orderAlphabetically,onRoleChangeHandle } = useHeroes();
+  const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
+
+
   const { currentPage } = usePagination();
   const heroesPorPagina = 8;
 

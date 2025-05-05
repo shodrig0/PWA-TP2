@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from "react"
+import { useNavigate } from "react-router-dom"
+import { NAVEGACION } from "../utils/const"
 
 const useHeroes = () => {
 
@@ -7,6 +9,7 @@ const useHeroes = () => {
     const [searchValue, setSearchValue] = useState("")
     const [loading, setLoading] = useState(false)
 
+    const navigate = useNavigate()
 
     const getHeroes = useCallback(async () => {
         try {
@@ -57,6 +60,10 @@ const useHeroes = () => {
         }
     }
 
+    const handleHeroClick = (heroId) => {
+        const url = NAVEGACION.heroDetails.replace(':heroId', heroId)
+        navigate(url)
+    }
 
 
     return {
@@ -65,7 +72,8 @@ const useHeroes = () => {
         onRoleChangeHandle,
         orderAlphabetically,
         onSearchChangeHandle,
-        loading
+        loading,
+        handleHeroClick
     }
 
 }

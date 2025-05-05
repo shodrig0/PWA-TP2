@@ -8,8 +8,8 @@ function ContainerCardHero() {
 
   return (
     <div className="min-h-screen w-full bg-black px-4 sm:px-8 py-6 flex justify-center">
-      <div className="w-[80%] grid gap-6"
-        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+      <div className="w-[80%] grid gap-1.5"
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
         {heroes.map((hero) => (
           <CardHeroe
             key={hero.key}

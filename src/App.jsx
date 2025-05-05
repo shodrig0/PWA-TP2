@@ -14,7 +14,7 @@ import './App.css'
 function App() {
   // const [count, setCount] = useState(0)
   return (
-    <PaginationProvider className="bg-black">
+    <PaginationProvider >
       <BrowserRouter>
         <Routes>
           <Route element={<Landing />} path={NAVEGACION.landing} />

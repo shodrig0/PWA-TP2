@@ -10,7 +10,7 @@ function useMaps() {
     useEffect(() => {
         async function fetchMaps() {
             try {
-                const response = await fetch(`/api/maps`)
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/maps`)
 
                 if (!response.ok) {
                     throw new Error("Error al obtener los mapas")

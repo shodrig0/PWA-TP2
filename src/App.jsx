@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { PaginationProvider } from './context/Pagination';
+import { PaginationProvider } from './Context/Pagination';
 import { NAVEGACION } from "./utils/const"
 import Home from './Pages/Home/Home';
 import Details from './Pages/Details/Details';

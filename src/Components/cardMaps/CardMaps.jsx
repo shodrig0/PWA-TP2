@@ -1,10 +1,11 @@
 import React from 'react'
 
-function CardMaps({ name, screenshot, gamemodes, location }) {
+function CardMaps({ name, screenshot, gamemodes, location, onClick }) {
 
   return (
 
-    <div className="group w-full max-w-5xl mx-auto my-6 bg-black/20 rounded-xl overflow-hidden shadow-md border border-white/10 hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+    <div className="group w-full max-w-5xl mx-auto my-6 bg-black/20 rounded-xl overflow-hidden shadow-md border border-white/10 hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out"
+      onClick={onClick}>
 
       <div className="w-full h-56 md:h-64 lg:h-72 overflow-hidden">
         <img

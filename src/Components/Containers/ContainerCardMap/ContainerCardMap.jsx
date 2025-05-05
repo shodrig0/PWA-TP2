@@ -4,7 +4,7 @@ import useMaps from '../../../Hooks/useMaps'
 
 function ContainerCardMap() {
 
-  const { maps } = useMaps()
+  const { maps, handleMapClick } = useMaps()
 
   return (
     <div>
@@ -18,6 +18,7 @@ function ContainerCardMap() {
             screenshot={mapa.screenshot}
             gamemodes={mapa.gamemodes}
             location={mapa.location}
+            onClick={() => handleMapClick(mapa.name)}
           />
         ))}
       </div>

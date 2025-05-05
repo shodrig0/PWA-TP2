@@ -1,7 +1,10 @@
 import React from 'react'
 import CardHeroe from '../../cardHeroe/cardHeroe'
+import useHeroes from '../../../Hooks/useHeroes'
 
-function containerCardHeroe({ heroes }) {
+function ContainerCardHeroe({ heroes }) {
+
+  const { handleHeroClick } = useHeroes()
 
   return (
     <div className="min-h-screen w-[80%]  bg-black px-4 sm:px-8 py-6 block md:flex justify-center">
@@ -12,15 +15,13 @@ function containerCardHeroe({ heroes }) {
             name={hero.name}
             portrait={hero.portrait}
             role={hero.role}
+            onClick={() => handleHeroClick(hero.key)}
           />
         ))}
       </div>
     </div>
 
-
-
-
   )
 }
 
-export default containerCardHeroe
+export default ContainerCardHeroe

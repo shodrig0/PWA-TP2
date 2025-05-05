@@ -1,22 +1,44 @@
 import useAboutUs from "../../../Hooks/useAboutUs"
+import Title from "../../Title/Title"
 
 const ContainerAboutUs = () => {
 
     const user = useAboutUs()
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {user.map((u) => (
-                <div key={u.login} className="bg-white shadow p-4 rounded">
-                    <img src={u.avatar_url} className="w-64 h-64 mx-auto rounded-full" alt={u.login} />
-                    <h2 className="text-xl font-semibold text-center mt-2"> {u.name || u.login}</h2>
-                    <p className="text-center text-gray-600">{u.bio}</p>
-                    <a href={u.html_url} target="_blank" rel="noopener noreferrer" className="block mt-2 text-center text-blue-500">
-                        GitHub Profile
-                    </a>
+        <section className="p-6 max-w-6xl mx-auto text-white">
+            <div className="bg-gray-900 rounded-2xl shadow-lg overflow-hidden">
+                <Title className="text-3xl font-bold text-center py-6 bg-gray-800" title={"Development Team"} />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+                    {user.map((u) => (
+                        <div
+                            key={u.login}
+                            className="bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+                        >
+                            <img
+                                src={u.avatar_url}
+                                className="w-full h-64 object-cover"
+                                alt={u.login}
+                            />
+                            <div className="p-4">
+                                <h2 className="text-2xl font-semibold text-center text-orange-400">
+                                    {u.name || u.login}
+                                </h2>
+                                <p className="text-center text-gray-400 mt-2">{u.bio}</p>
+                                <a
+                                    href={u.html_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block mt-4 text-center text-blue-400 hover:underline"
+                                >
+                                    GitHub Profile
+                                </a>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
+            </div>
+        </section>
     )
 }
 

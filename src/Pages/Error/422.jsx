@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { NAVEGACION } from "../../utils/const"
+import { NAVEGACION } from "../../Utils/const"
 import { useEffect } from "react"
 import Button from "../../Components/Button/Button"
 

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { NAVEGACION } from "../../utils/const"
+import { NAVEGACION } from "../../Utils/const"
 import Button from "../Button/Button"
 import ContainerAboutUs from "../Containers/ContainerAboutUs/ContainerAboutUs"
 import Navbar from "../Navbar/Navbar"

@@ -1,5 +1,5 @@
 
-import { NAVEGACION } from '../../utils/const' // ?
+import { NAVEGACION } from '../../Utils/const' // ?
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Input from '../Input/Input'

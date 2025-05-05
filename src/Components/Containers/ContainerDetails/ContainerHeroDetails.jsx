@@ -10,7 +10,7 @@ const HeroDetails = () => {
     useEffect(() => {
         const heroDetails = async () => {
             try {
-                const resp = await fetch(`/api/heroes/${heroId}`) // pendiente
+                const resp = await fetch(`${import.meta.env.VITE_API_URL}/heroes/${heroId}`) // pendiente
 
                 if (!resp.ok) {
                     throw new Error('No hero')

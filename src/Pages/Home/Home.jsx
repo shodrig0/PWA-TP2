@@ -28,11 +28,11 @@ function Home() {
     setCurrentPage(1);
   }, [heroes, maps]);
   return (
-    <div className="grid place-items-center bg-black">
+    <div className=" w-full grid md:place-items-center bg-black">
       <Header />
       <BannerHome />
 
-      <div className="flex gap-4 my-4">
+      <div className="flex w-full justify-center gap-4 my-4">
         <button
           className={`px-4 py-2 rounded ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}

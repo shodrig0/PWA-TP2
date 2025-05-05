@@ -16,7 +16,8 @@ function ContainerCardMap({ maps }) {
           md:grid-cols-3 
           lg:grid-cols-4 
           gap-6 
-          w-[90%] 
+          w-full
+          md:w-[90%] 
           max-w-7xl
         "
       >

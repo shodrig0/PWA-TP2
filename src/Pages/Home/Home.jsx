@@ -3,7 +3,7 @@ import useMaps from "../../Hooks/useMaps";
 import Header from "../../Components/Header/Header";
 import ContainerCardHero from "../../Components/Containers/ContainerCardHero/ContainerCardHero";
 import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap";
-import BannerHome from "../../Components/BannerHome/BannerHome"
+import BannerHome from "../../Components/Banner/BannerHome";
 import BtnPaginado from "../../Components/BtnPaginado/BtnPaginado";
 import { usePagination } from "../../Context/Pagination";
 import Footer from "../../Components/Footer/Footer";

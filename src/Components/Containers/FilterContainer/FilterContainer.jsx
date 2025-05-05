@@ -1,5 +1,5 @@
-import FilterAndOrder from "../../FiltersAndOrder/filtersAndOrder";
-import SelectFilter from "../../SelectFilter/SelectFilter";
+// import FilterAndOrder from "../../FiltersAndOrder/FiltersAndOrder";
+import SelectFilter from "../../FilterSelected/SelectFilter";
 
 const FilterContainer = ({ onOrderChange, onRoleChange }) => {
 

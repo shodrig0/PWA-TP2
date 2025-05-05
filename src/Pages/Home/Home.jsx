@@ -8,12 +8,12 @@ import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
 import Footer from "../../Components/footer/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Home() {
   const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
   const { maps } = useMaps();
-  const { currentPage ,setCurrentPage} = usePagination();
+  const { currentPage, setCurrentPage } = usePagination();
 
 
   const [isHeroe, setIsHeroe] = useState(true);
@@ -26,7 +26,7 @@ function Home() {
   const mapsActuales = maps.slice(indexPrimerItem, indexUltimoItem);
   useEffect(() => {
     setCurrentPage(1);
-  }, [heroes,maps]);
+  }, [heroes, maps]);
   return (
     <div className="grid place-items-center bg-black">
       <Header />
@@ -60,13 +60,13 @@ function Home() {
           ) : (
             <ContainerCardHero heroes={heroesActuales} />
           )}
-        
+
         </>
       ) : (
         <>
           <FilterContainer
-            // onOrderChange={orderAlphabetically}
-            // onRoleChange={onRoleChangeHandle}
+          // onOrderChange={orderAlphabetically}
+          // onRoleChange={onRoleChangeHandle}
           />
           {loading ? (
             <div className="flex justify-center items-center min-h-screen">
@@ -77,10 +77,10 @@ function Home() {
           )}
         </>
       )}
-      <BtnPaginado 
-  elementosPorPagina={elementosPorPagina} 
-  totalItems={isHeroe ? heroes.length : maps.length} 
-/>
+      <BtnPaginado
+        elementosPorPagina={elementosPorPagina}
+        totalItems={isHeroe ? heroes.length : maps.length}
+      />
 
       <Footer />
     </div>

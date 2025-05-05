@@ -1,15 +1,7 @@
 import React from 'react'
-import { NAVEGACION } from '../../utils/const';
-import { useNavigate } from 'react-router-dom';
 
 function CardHeroe({ name, portrait, role, onClick }) {
 
-  const navigate = useNavigate();
-
-  const handleCardClick = (name) => {
-    const url = NAVEGACION.details.replace(':heroId', encodeURIComponent(name));
-    navigate(url);
-  };
   let bgCard = "";
   if (role == "tank") {
     bgCard = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Via2t5ZTlrcHFvbng4dW51cG55ZWZjNndiY2wydWp3bHM4d3Z3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cMhglZMLwT8e1jYkfC/giphy.gif"
@@ -26,7 +18,7 @@ function CardHeroe({ name, portrait, role, onClick }) {
   return (
     <div
       className="relative border-4 border-yellow-400 w-[350px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5 cursor-pointer"
-      onClick={onClick} // Manejar el clic aquí
+      onClick={onClick}
     >
 
       <div className="relative w-[350px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">

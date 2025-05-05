@@ -5,7 +5,7 @@ import ContainerCardHero from "../../Components/Containers/ContainerCardHero/Con
 import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap";
 import BannerHome from "../../Components/Banner/BannerHome";
 import BtnPaginado from "../../Components/BtnPag/BtnPaginado";
-import { usePagination } from "../../Context/Pagination"
+import { usePagination } from "../../Contexto/Pagination"
 import Footer from "../../Components/Footer/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
 import { useState, useEffect } from "react";

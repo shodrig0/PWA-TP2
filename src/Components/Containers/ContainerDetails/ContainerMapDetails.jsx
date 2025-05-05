@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { NAVEGACION } from '../../../Utils/const'
+import { NAVEGACION } from '../../../Const/const'
 import useMaps from '../../../Hooks/useMaps'
 
 const MapDetails = () => {

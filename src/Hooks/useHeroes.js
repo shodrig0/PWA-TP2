@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react"
 import { useNavigate } from "react-router-dom"
-import { NAVEGACION } from "../Utils/const"
+import { NAVEGACION } from "../Const/const"
 
 const useHeroes = () => {
 

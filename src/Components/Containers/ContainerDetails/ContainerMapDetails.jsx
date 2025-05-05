@@ -1,21 +1,21 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import useMaps from '../../../Hooks/useMaps'
 
 const MapDetails = () => {
 
-    const { name } = useParams();
-    const [map, setMap] = useState(null);
+    const { name } = useParams()
+    const { maps, loading } = useMaps()
+    const [map, setMap] = useState(null)
 
     useEffect(() => {
-        fetch(`/api/maps`)
-            .then((res) => res.json())
-            .then((data) => {
-                const found = data.find((m) => m.name === name);
-                setMap(found);
-            });
-    }, [name]);
+        if (maps) {
+            const found = maps.find((m) => m.name === name)
+            setMap(found)
+        }
+    }, [maps, name])
 
-    if (!map) return <p>Cargando...</p>;
+    if (loading || !map) return <p>Loading...</p>;
 
     return (
         <div>

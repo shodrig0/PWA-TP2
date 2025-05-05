@@ -10,7 +10,7 @@ const HeroDetails = () => {
     useEffect(() => {
         const heroDetails = async () => {
             try {
-                const resp = await fetch(`/api/heroes/${heroId}`)
+                const resp = await fetch(`/api/heroes/${heroId}`) // pendiente
 
                 if (!resp.ok) {
                     throw new Error('No hero')

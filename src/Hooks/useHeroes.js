@@ -59,11 +59,19 @@ const useHeroes = () => {
     };
 
 
+    const onRoleChangeHandle = (role) => {
+        if (role !== "") {
+            const filtered = heroes.filter((hero) => hero.role === role);
+            setFilteredHeroes(filtered)
+        }
+    }
+
 
 
     return {
         heroes: filteredHeroes,
         searchValue,
+        onRoleChangeHandle,
         orderAlphabetically,
         onSearchChangeHandle,
         loading

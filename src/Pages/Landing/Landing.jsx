@@ -28,7 +28,7 @@ function Landing() {
       <div className="relative z-20 max-w-6xl px-6 h-full flex flex-col md:flex-row items-center justify-around gap-10 text-white text-left">
 
 {/* Logo para pantallas chicas (visible solo en sm) */}
-<div className="block md:hidden mb-4 flex justify-center w-full">
+<div className="block md:hidden mb-4  justify-center w-full">
   <img
     src="/overwatch-logo.png"
     alt="Overwatch Logo"

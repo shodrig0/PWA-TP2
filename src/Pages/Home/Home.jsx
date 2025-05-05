@@ -7,10 +7,10 @@ import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
 import Footer from "../../Components/footer/Footer";
 import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
-import ContainersFilter from "../../Components/Containers/ContainerFilters/ContainersFilter";
+import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
 
 function Home() {
-  const { heroes, loading } = useHeroes();
+  const { heroes, loading,orderAlphabetically,onRoleChangeHandle } = useHeroes();
   const { currentPage } = usePagination();
   const heroesPorPagina = 8;
 
@@ -22,8 +22,10 @@ function Home() {
     <div className="grid place-items-center bg-black">
       <Header />
       <BannerHome />
-      <FiltersAndOrder/>
-      <ContainersFilter />
+      <FilterContainer
+        onOrderChange={orderAlphabetically}
+        onRoleChange={onRoleChangeHandle}
+      />
       {loading ? (
         <div className="flex justify-center items-center min-h-screen">
           <img src="/spinerOverwatch.gif" alt="Loading..." />
@@ -31,7 +33,7 @@ function Home() {
       ) : (
         <ContainerCardHero heroes={heroesActuales} />
       )}
-      <ContainerCardMap />
+      {/* <ContainerCardMap /> */}
       <BtnPaginado elementosPorPagina={heroesPorPagina} />
       <Footer />
     </div>

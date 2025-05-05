@@ -72,7 +72,6 @@ const useHeroes = () => {
         orderAlphabetically,
         onSearchChangeHandle,
         loading,
-        orderAlphabetically,
         getHeroById
     }
 

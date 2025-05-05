@@ -1,18 +1,17 @@
 import useHeroes from "../../Hooks/useHeroes";
-// import useMaps from "../../Hooks/useMaps";
 import Header from "../../Components/Header/Header"
 import ContainerCardHero from "../../Components/Containers/ContainerCardHero/ContainerCardHero"
-// import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap"
+import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap"
 import BannerHome from "../../Components/bannerHome/bannerHome";
 import BtnPaginado from "../../Components/btnPaginado/BtnPaginado";
 import { usePagination } from "../../context/Pagination";
 import Footer from "../../Components/footer/Footer";
 import FiltersAndOrder from "../../Components/filtersAndOrder/filtersAndOrder";
+import ContainersFilter from "../../Components/Containers/ContainerFilters/ContainersFilter";
 
 function Home() {
   const { heroes, loading } = useHeroes();
   const { currentPage } = usePagination();
-  // const { maps } = useMaps();
   const heroesPorPagina = 8;
 
   // Cálculo de índices
@@ -23,7 +22,8 @@ function Home() {
     <div className="grid place-items-center bg-black">
       <Header />
       <BannerHome />
-      <FiltersAndOrder />
+      <FiltersAndOrder/>
+      <ContainersFilter />
       {loading ? (
         <div className="flex justify-center items-center min-h-screen">
           <img src="/spinerOverwatch.gif" alt="Loading..." />

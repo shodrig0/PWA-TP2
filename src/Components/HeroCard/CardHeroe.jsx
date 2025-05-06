@@ -17,7 +17,7 @@ function CardHeroe({ name, portrait, role, onClick }) {
   }
   return (
     <div
-      className="relative group w-full sm:w-[300px] max-w-full mx-auto my-6 m-auto  h-[450px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg  cursor-pointer"
+      className="relative group  sm:w-[300px]  mx-auto my-6 m-auto  h-[405px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg  cursor-pointer"
       onClick={onClick}
     >
 

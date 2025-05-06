@@ -23,11 +23,11 @@ const BannerHome = () => {
       className="w-full h-full xl:h-screen overflow-hidden grid md:place-items-center"
      
     >
-        <div className="absolute inset-0 flex justify-center   m-0 md:mt-60 mx:mt-100 items-center z-30 pointer-events-none">
+        <div className="absolute -top-10 sm:-top-20 inset-0 flex justify-center   m-0 md:mt-60 mx:mt-100 xl:top-0 items-center z-30 pointer-events-none">
     <img
       src="/overwatch-logo.png"
       alt="Overwatch logo"
-      className="w-40 md:w-60 xl:w-96"
+      className="w-30 md:w-60 xl:w-96"
     />
   </div>
   <div className="relative w-full h-full list-none m-0 p-0 xl:hidden">
@@ -70,6 +70,17 @@ const BannerHome = () => {
             className="w-full h-full object-contain"
           />
         </li>
+        <li
+  data-depth="0.2"
+  className="layer"
+  style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0 }}
+>
+  <img
+    src="laser.png"
+    alt=""
+    className="w-full h-full object-contain transform -translate-x-19"
+  />
+</li>
 
         <li
           data-depth="0.2"

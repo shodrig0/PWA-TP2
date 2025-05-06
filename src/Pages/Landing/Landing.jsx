@@ -25,7 +25,7 @@ function Landing() {
       />
 
 
-      <div className="relative z-20 max-w-6xl px-6 h-full flex flex-col md:flex-row items-center justify-around gap-10 text-white text-left">
+      <div className="relative z-20 max-w-6xl px-6  flex flex-col md:flex-row items-center justify-around gap-10 text-white text-left">
 
         <div className="block md:hidden  justify-center w-full">
           <img

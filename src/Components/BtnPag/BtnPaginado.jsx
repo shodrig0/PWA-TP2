@@ -13,7 +13,7 @@ function BtnPaginado({ elementosPorPagina, totalItems }) {
   };
 
   return (
-    <div className="m-auto flex gap-2 mt-4">
+    <div className="w-full flex justify-center ">
       <button
         onClick={() => cambiarPagina(currentPage - 1)}
         disabled={currentPage === 1}

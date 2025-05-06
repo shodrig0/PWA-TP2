@@ -23,7 +23,7 @@ const BannerHome = () => {
       className="w-full h-full xl:h-screen overflow-hidden grid md:place-items-center"
      
     >
-        <div className="absolute inset-0 flex justify-center  md:mt-60 mx:mt-100 items-center z-30 pointer-events-none">
+        <div className="absolute inset-0 flex justify-center   m-0 md:mt-60 mx:mt-100 items-center z-30 pointer-events-none">
     <img
       src="/overwatch-logo.png"
       alt="Overwatch logo"

@@ -15,9 +15,14 @@ const FilterContainer = ({ onOrderChange, onRoleChange }) => {
     { value: "desc", label: "Z - A" },
   ];
   return (
-    <div className="flex justify-center pb-4" style={{ backgroundColor: '#111F27' }}>
+    <div className="flex justify-center pb-4 z-20" style={{ backgroundColor: '#001922' }}>
       <SelectFilter options={roleOptions} onChange={onRoleChange} />
       <SelectFilter options={orderOptions} onChange={onOrderChange} />
+      <img
+    src="/bot_diver.png"
+    alt="TopDiviver"
+    className="absolute hidden md:flex w-full -bop-6 left-1/2 -translate-x-1/2   object-contain"
+  />
     </div>
   );
 };

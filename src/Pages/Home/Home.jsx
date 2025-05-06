@@ -31,7 +31,7 @@ function Home() {
     <div
     className="w-full min-h-screen"
     style={{
-      backgroundImage: `url('https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90')`,
+      backgroundImage: `url('https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt70831d0b96f957e8/6308459c25d5bc116e8d100c/cloud-1600.jpg?format=webply&quality=90https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90')`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -41,19 +41,25 @@ function Home() {
       <Header />
       <BannerHome />
 
-      <div className="flex w-full justify-center gap-4 py-4" style={{ backgroundColor: '#111F27' }}>
+      <div className="flex w-full justify-center gap-4 py-4 relative z-10" style={{ backgroundColor: '#001922' }}>
+ 
         <button
-          className={`px-4 py-2 rounded ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
+          className={`px-4 py-2 rounded z-20 ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}
         >
           Heroes
         </button>
         <button
-          className={`px-4 py-2 rounded ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
+          className={`px-4 py-2 rounded z-20 ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(false)}
         >
           Maps
         </button>
+        <img
+    src="/top_diver.png"
+    alt="TopDiviver"
+    className="absolute w-full -top-6 left-1/2 -translate-x-1/2   object-contain"
+  />
       </div>
 
       {isHeroe ? (

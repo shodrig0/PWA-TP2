@@ -18,14 +18,14 @@ const Navbar = () => {
     useEffect(() => {
         let timeout = setTimeout(() => {
             setVisible(false)
-        }, 2000)
+        }, 4000)
 
         const handleUserInteraction = () => {
             setVisible(true)
             clearTimeout(timeout)
             timeout = setTimeout(() => {
                 setVisible(false)
-            }, 2000)
+            }, 4000)
         }
 
         window.addEventListener('mousemove', handleUserInteraction)

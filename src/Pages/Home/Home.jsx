@@ -41,7 +41,7 @@ function Home() {
       <Header />
       <BannerHome />
 
-      <div className="flex w-full justify-center gap-4 my-4">
+      <div className="flex w-full justify-center gap-4 py-4" style={{ backgroundColor: '#111F27' }}>
         <button
           className={`px-4 py-2 rounded ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}
@@ -57,7 +57,7 @@ function Home() {
       </div>
 
       {isHeroe ? (
-        <>
+        < >
           <FilterContainer
             onOrderChange={orderAlphabetically}
             onRoleChange={onRoleChangeHandle}

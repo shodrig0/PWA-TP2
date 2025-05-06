@@ -15,7 +15,7 @@ const FilterContainer = ({ onOrderChange, onRoleChange }) => {
     { value: "desc", label: "Z - A" },
   ];
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center pb-4" style={{ backgroundColor: '#111F27' }}>
       <SelectFilter options={roleOptions} onChange={onRoleChange} />
       <SelectFilter options={orderOptions} onChange={onOrderChange} />
     </div>

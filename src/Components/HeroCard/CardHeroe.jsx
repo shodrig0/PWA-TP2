@@ -2,14 +2,14 @@ import React from 'react'
 
 function CardHeroe({ name, portrait, role, onClick }) {
 
-  let bgCard = "";
-  if (role == "tank") {
-    bgCard = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Via2t5ZTlrcHFvbng4dW51cG55ZWZjNndiY2wydWp3bHM4d3Z3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cMhglZMLwT8e1jYkfC/giphy.gif"
-  } else if (role == "damage") {
-    bgCard = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN20zejM1c2xzczNseWo4bWNkYmw5N3p6cmN0bGtyZzhqY3U1Zm85NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NLwQZlo5wA8su4kYhL/giphy.gif"
-  } else if (role == "support") {
-    bgCard = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZhNWE4MnBsZ2t1NmpkYWFhaHozOTgwaTdvYjgybnJmNmE3NnVwOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GOFp6uulTA5MzD7hJq/giphy.gif"
-  }
+  // let bgCard = "";
+  // if (role == "tank") {
+  //   bgCard = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Via2t5ZTlrcHFvbng4dW51cG55ZWZjNndiY2wydWp3bHM4d3Z3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cMhglZMLwT8e1jYkfC/giphy.gif"
+  // } else if (role == "damage") {
+  //   bgCard = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN20zejM1c2xzczNseWo4bWNkYmw5N3p6cmN0bGtyZzhqY3U1Zm85NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NLwQZlo5wA8su4kYhL/giphy.gif"
+  // } else if (role == "support") {
+  //   bgCard = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZhNWE4MnBsZ2t1NmpkYWFhaHozOTgwaTdvYjgybnJmNmE3NnVwOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GOFp6uulTA5MzD7hJq/giphy.gif"
+  // }
   let iconRol = {
     tank: "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/bltf0889daa1ef606db/6504cff74d2a764cb7973991/Tank.svg?format=webply&quality=90",
     damage: "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt05d482c88096959a/6504cff7d9caa1285f64b6bd/Damage.svg?format=webply&quality=90",
@@ -17,14 +17,14 @@ function CardHeroe({ name, portrait, role, onClick }) {
   }
   return (
     <div
-      className="relative m-auto w-[350px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5 cursor-pointer"
+      className="relative group w-full sm:w-[300px] max-w-full mx-auto my-6 m-auto  h-[450px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg  cursor-pointer"
       onClick={onClick}
     >
 
-      <div className="relative w-[350px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">
+      <div className="relative w-[300px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-opacity-50 z-0"
-          style={{ backgroundImage: `url("${bgCard}")` }}
+          className="absolute inset-0 bg-cover bg-center bg-opacity-50 z-0  bg-black/20 rounded-xl overflow-hidden shadow-md border border-white/10 hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out"
+          // style={{ backgroundImage: `url("${bgCard}")` }}
         ></div>
         <div className="flex justify-center items-center aspect-square  relative  bg-white/0">
           <img
@@ -48,13 +48,13 @@ function CardHeroe({ name, portrait, role, onClick }) {
         </h3>
 
 
-        <h3 className="absolute bottom-15.5 left-36 md:bottom-9  md:left-21 font-primary uppercase text-white font-semibold z-20 text-xm md:text-xs">{role}</h3>
+        <h3 className="absolute bottom-13.5 left-32 md:bottom-9  md:left-21 font-primary uppercase text-white font-semibold z-20 text-xm md:text-xs">{role}</h3>
         <img
           src={iconRol[role]}
           alt="role"
-          className="absolute bottom-15.25 left-15 md:left-8.5 md:bottom-8.5  w-10 h-10  md:w-6 md:h-6  opacity-75 z-20"
+          className="absolute bottom-12.25 left-12 md:left-8.5 md:bottom-8.5  w-10 h-10  md:w-6 md:h-6  opacity-75 z-20"
         />
-        <div className="h-28 px-6 py-5 pr-10 relative z-10"></div>
+        <div className=" h-21 md:h-28 px-6 py-5 pr-10 relative z-10"></div>
       </div>
     </div>
   )

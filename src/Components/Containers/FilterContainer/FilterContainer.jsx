@@ -4,7 +4,7 @@ import SelectFilter from "../../FilterSelected/SelectFilter";
 const FilterContainer = ({ onOrderChange, onRoleChange }) => {
 
   const roleOptions = [
-    { value: "", label: "Todos los roles" },
+    { value: "all", label: "Todos los roles" },
     { value: "tank", label: "Tank" },
     { value: "damage", label: "Damage" },
     { value: "support", label: "Support" },

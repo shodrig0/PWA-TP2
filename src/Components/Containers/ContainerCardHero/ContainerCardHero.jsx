@@ -7,9 +7,19 @@ function ContainerCardHeroe({ heroes }) {
   const { handleHeroClick } = useHeroes()
 
   return (
-    <div className="min-h-screen w-full md:w-[80%] bg-black py-6 flex justify-center">
+    <div className="w-full flex justify-center mt-6">
 
-      <div className=" grid gap-1 grid-cols-1  md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 ">
+      <div className="
+          grid 
+          grid-cols-1 
+          sm:grid-cols-2 
+          md:grid-cols-3 
+          lg:grid-cols-4 
+          gap-2 
+          w-full
+          md:w-[90%] 
+          max-w-7xl
+        ">
         {heroes.map((hero) => (
           <CardHeroe
             key={hero.key}

@@ -16,7 +16,6 @@ const useHeroes = () => {
             setLoading(true)
 
             const url = `${import.meta.env.VITE_API_URL}/heroes`
-            // const url = `/api/heroes`
             const resp = await fetch(url)
 
             if (!resp.ok) {
@@ -55,9 +54,11 @@ const useHeroes = () => {
 
 
     const onRoleChangeHandle = (role) => {
-        if (role !== "") {
+        if (role === "" || role === "all") {
+            setFilteredHeroes(heroes);
+        } else {
             const filtered = heroes.filter((hero) => hero.role === role);
-            setFilteredHeroes(filtered)
+            setFilteredHeroes(filtered);
         }
     }
 

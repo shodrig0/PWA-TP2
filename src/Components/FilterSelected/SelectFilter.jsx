@@ -2,7 +2,7 @@ import React from 'react';
 
 function SelectFilter({ onChange, options }) {
   return (
-    <div className='mx-10'>
+    <div className=''>
       <select
         onChange={(e) => onChange(e.target.value)}
         className="p-2 rounded bg-gray-800 text-white border border-gray-600"

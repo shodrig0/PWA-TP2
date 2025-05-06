@@ -14,7 +14,7 @@ function Landing() {
 
   return (
     <div className="relative h-screen w-full flex justify-center overflow-hidden">
-      {/* Video de fondo */}
+   
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         src="https://res.cloudinary.com/dxwx1kc4l/video/upload/v1746118766/wbjn4iubkql7apzsjrxg.mp4"
@@ -24,19 +24,17 @@ function Landing() {
         playsInline
       />
 
-      {/* Contenido central */}
+
       <div className="relative z-20 max-w-6xl px-6 h-full flex flex-col md:flex-row items-center justify-around gap-10 text-white text-left">
 
-        {/* Logo para pantallas chicas (visible solo en sm) */}
-        <div className="block md:hidden mb-4  justify-center w-full">
+        <div className="block md:hidden  justify-center w-full">
           <img
             src="/overwatch-logo.png"
             alt="Overwatch Logo"
-            className="w-40 object-contain"
+            className="w-40 object-contain m-auto mt-10"
           />
         </div>
 
-        {/* Texto */}
         <div className="w-full h-full md:h-screen md:flex md:items-center md:justify-center">
           <div className="w-full max-w-xl flex flex-col items-start">
             <h1 className="font-primary md:text-center text-2xl md:text-3xl font-extrabold mb-4 leading-tight">
@@ -51,7 +49,7 @@ function Landing() {
               <li className='flex items-center'><Search className="w-8 h-8 text-yellow-400 mr-3" />Find the information you need in seconds</li>
             </ul>
 
-            {/* Botón centrado */}
+         
             <div className="w-full flex sm:justify-center xl:justify-start">
               <button
                 onClick={goToHome}
@@ -63,7 +61,6 @@ function Landing() {
           </div>
         </div>
 
-        {/* Logo para pantallas medianas en adelante */}
         <div className="hidden md:flex md:w-1/2 justify-end">
           <img
             src="/overwatch-logo.png"

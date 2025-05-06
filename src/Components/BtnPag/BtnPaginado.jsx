@@ -26,7 +26,7 @@ function BtnPaginado({ elementosPorPagina, totalItems }) {
         <button
           key={i}
           onClick={() => cambiarPagina(i + 1)}
-          className={`relative group px-3 py-1 rounded focus:outline-none`}
+          className={`relative group md:px-3 py-1 rounded focus:outline-none`}
         >
           <img
             src="btnNumberPagination.png"

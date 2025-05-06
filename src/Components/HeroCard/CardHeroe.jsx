@@ -17,11 +17,11 @@ function CardHeroe({ name, portrait, role, onClick }) {
   }
   return (
     <div
-      className="relative m-auto w-[350px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg my-5 cursor-pointer"
+      className="relative m-auto w-[300px] h-[450px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg my-5 cursor-pointer"
       onClick={onClick}
     >
 
-      <div className="relative w-[350px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">
+      <div className="relative w-[300px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">
         <div
           className="absolute inset-0 bg-cover bg-center bg-opacity-50 z-0"
           style={{ backgroundImage: `url("${bgCard}")` }}
@@ -48,13 +48,13 @@ function CardHeroe({ name, portrait, role, onClick }) {
         </h3>
 
 
-        <h3 className="absolute bottom-15.5 left-36 md:bottom-9  md:left-21 font-primary uppercase text-white font-semibold z-20 text-xm md:text-xs">{role}</h3>
+        <h3 className="absolute bottom-13.5 left-32 md:bottom-9  md:left-21 font-primary uppercase text-white font-semibold z-20 text-xm md:text-xs">{role}</h3>
         <img
           src={iconRol[role]}
           alt="role"
-          className="absolute bottom-15.25 left-15 md:left-8.5 md:bottom-8.5  w-10 h-10  md:w-6 md:h-6  opacity-75 z-20"
+          className="absolute bottom-12.25 left-12 md:left-8.5 md:bottom-8.5  w-10 h-10  md:w-6 md:h-6  opacity-75 z-20"
         />
-        <div className="h-28 px-6 py-5 pr-10 relative z-10"></div>
+        <div className=" h-21 md:h-28 px-6 py-5 pr-10 relative z-10"></div>
       </div>
     </div>
   )

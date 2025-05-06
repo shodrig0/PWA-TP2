@@ -33,9 +33,9 @@ const Navbar = () => {
 
 
     return (
-        <div className="relative w-full flex items-center justify-between z-20 p-4 bg-gray-800 text-white">
+        <div className="relative w-full block md:flex items-center justify-between z-20 p-4 bg-gray-800 text-white">
             <Input
-                className="border border-gray-300 rounded-lg ml-3 p-2 w-1/2"
+                className="border w-xs border-gray-300 rounded-lg ml-3 p-2 md:w-1/2"
                 value={searchValue}
                 onChange={onSearchChangeHandle}
                 placeholder="Search"
@@ -91,8 +91,8 @@ const Navbar = () => {
             )}
 
             {/* Botones de navegación */}
-            <Button className={`font-primary`} onClick={() => { }} name={`FAVOURITES`} />
-            <Button className={`font-primary`} onClick={handleGoToAboutUs} name={`ABOUT US`} />
+            <Button className={`font-primary w-full text-xs md:text-xl`} onClick={() => { }} name={`FAVOURITES`} />
+            <Button className={`font-primary  w-full text-xs md:text-xl`} onClick={handleGoToAboutUs} name={`ABOUT US`} />
             <Button />
         </div>
     )

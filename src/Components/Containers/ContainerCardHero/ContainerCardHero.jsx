@@ -4,7 +4,7 @@ import useHeroes from '../../../Hooks/useHeroes'
 
 function ContainerCardHeroe({ heroes }) {
 
-  const { handleHeroClick } = useHeroes()
+  const { handleHeroClick, favourites, addFavouriteHero } = useHeroes()
 
   return (
     <div className="w-full flex justify-center mt-6">
@@ -27,6 +27,8 @@ function ContainerCardHeroe({ heroes }) {
             portrait={hero.portrait}
             role={hero.role}
             onClick={() => handleHeroClick(hero.key)}
+            isFavourite={favourites.includes(hero.key)}
+            addFavouriteHero={() => addFavouriteHero(hero.key)}
           />
         ))}
       </div>

@@ -1,6 +1,7 @@
 import React from 'react'
+import Button from '../Button/Button'
 
-function CardHeroe({ name, portrait, role, onClick }) {
+function CardHeroe({ name, portrait, role, onClick, isFavourite, addFavouriteHero }) {
 
   // let bgCard = "";
   // if (role == "tank") {
@@ -18,13 +19,12 @@ function CardHeroe({ name, portrait, role, onClick }) {
   return (
     <div
       className="relative group  sm:w-[300px]  mx-auto my-6 m-auto  h-[405px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg  cursor-pointer"
-      onClick={onClick}
     >
 
       <div className="relative w-[300px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">
         <div
           className="absolute inset-0 bg-cover bg-center bg-opacity-50 z-0  bg-black/20 rounded-xl overflow-hidden shadow-md border border-white/10 hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out"
-          // style={{ backgroundImage: `url("${bgCard}")` }}
+        // style={{ backgroundImage: `url("${bgCard}")` }}
         ></div>
         <div className="flex justify-center items-center aspect-square  relative  bg-white/0">
           <img
@@ -55,6 +55,21 @@ function CardHeroe({ name, portrait, role, onClick }) {
           className="absolute bottom-12.25 left-12 md:left-8.5 md:bottom-8.5  w-10 h-10  md:w-6 md:h-6  opacity-75 z-20"
         />
         <div className=" h-21 md:h-28 px-6 py-5 pr-10 relative z-10"></div>
+      </div>
+      <div className="absolute bottom-2 left-2 z-20">
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            checked={isFavourite}
+            onChange={addFavouriteHero}
+            className="w-5 h-5"
+          />
+          <span className="text-white text-sm">Favourite</span>
+        </label>
+      </div>
+      <div className="absolute bottom-2 right-2 z-20">
+        <Button className="bg-orange-400 hover:bg-orange-500 text-black font-bold py-2 px-4 rounded shadow-lg cursor-pointer"
+          onClick={onClick} name={"Details"} />
       </div>
     </div>
   )

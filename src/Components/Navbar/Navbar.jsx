@@ -1,5 +1,5 @@
 import { NAVEGACION } from '../../Const/const' // ?
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
@@ -13,6 +13,7 @@ const Navbar = () => {
     const { heroes, handleHeroClick } = useHeroes()
     const { maps, handleMapClick } = useMaps()
     const [searchValue, setSearchValue] = useState("")
+    const [visible, setVisible] = useState("");
     const navigate = useNavigate()
 
     const toggleLanguage = () => {
@@ -45,6 +46,9 @@ const Navbar = () => {
     }, [])
 
     const handleGoToAboutUs = () => navigate(NAVEGACION.aboutUs)
+    const handleGoToFavourites = () => {
+        navigate(NAVEGACION.favourites)
+    }
     const handleGoToHome = () => {
         navigate(NAVEGACION.home)
       }
@@ -104,11 +108,13 @@ const Navbar = () => {
                 </div>
             )}
 
-            <Button className="font-primary w-full text-xs md:text-xl" onClick={() => { }} name={t("favourites")} />
-            <Button className="font-primary w-full text-xs md:text-xl" onClick={handleGoToAboutUs} name={t("aboutUs")} />
+            
+                
+            <Button className="w-xs font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToFavourites}  name={t("favourites")} />
+            <Button className=" w-xs font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToAboutUs} name={t("aboutUs")}/>
             <Button />
-            <Button className="font-primary w-full text-xs md:text-xl" onClick={toggleLanguage}  name={`🌐 ${i18n.language.toUpperCase()}`}
-/>        </div>
+            <Button className=" w-xs font-primary w-full text-xs md:text-xl cursor-pointer" onClick={toggleLanguage}  name={`🌐 ${i18n.language.toUpperCase()}`} />    
+</div>
     )
 }
 

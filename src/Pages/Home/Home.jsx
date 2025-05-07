@@ -10,20 +10,15 @@ import BannerHome from "../../Components/Banner/BannerHome";
 import BtnPaginado from "../../Components/BtnPag/BtnPaginado";
 import Footer from "../../Components/Footerr/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next'
 
 
 function Home() {
   const { t, i18n } = useTranslation();
-=======
 
-const Home = () => {
 
   usePageTitle()
 
->>>>>>> df2c3506a63ca2979f25c036a3d159c360d041a1
   const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
   const { maps } = useMaps();
   const { currentPage, setCurrentPage } = usePagination();
@@ -115,5 +110,6 @@ const Home = () => {
     </div>
   );
 }
+
 
 export default Home;

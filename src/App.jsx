@@ -7,13 +7,8 @@ import Details from './Pages/Details/Details';
 import Landing from './Pages/Landing/Landing';
 import PageNotFound from './Pages/Error/404';
 import PageValidationError from './Pages/Error/422';
-<<<<<<< HEAD
-import AboutUs from './Components/AboutUs/AboutUs';
-import './i18n'
-=======
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Favourites from './Pages/Favourites/Favourites';
->>>>>>> df2c3506a63ca2979f25c036a3d159c360d041a1
 import './App.css'
 
 const App = () => {

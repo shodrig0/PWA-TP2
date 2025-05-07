@@ -13,7 +13,6 @@ function CardMaps({ name, screenshot, gamemodes, location, onClick, isFavourite,
       </div>
       <div className="p-5">
         <h2 className="text-white text-2xl font-bold mb-2">{name}</h2>
-        <p className="text-sm text-gray-400 mb-3">📍 {location}</p>
 
         <div className="flex flex-wrap gap-2">
           {gamemodes.map((modo, index) => (

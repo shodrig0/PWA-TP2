@@ -1,20 +1,22 @@
-import React from 'react'
 import { Boxes, Search, Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { NAVEGACION } from '../../Const/const';
-import useHeroes from '../../Hooks/useHeroes';
+import React from 'react'
+import usePageTitle from '../../Hooks/usePageTitle';
 
-function Landing() {
-  const navigate = useNavigate();
-  const { heroes } = useHeroes();
+const Landing = () => {
+
+  usePageTitle()
+
+  const navigate = useNavigate()
 
   const goToHome = () => {
-    navigate(NAVEGACION.home);
-  };
+    navigate(NAVEGACION.home)
+  }
 
   return (
     <div className="relative h-screen w-full flex justify-center overflow-hidden">
-   
+
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         src="https://res.cloudinary.com/dxwx1kc4l/video/upload/v1746118766/wbjn4iubkql7apzsjrxg.mp4"
@@ -49,7 +51,7 @@ function Landing() {
               <li className='flex items-center'><Search className="w-8 h-8 text-yellow-400 mr-3" />Find the information you need in seconds</li>
             </ul>
 
-         
+
             <div className="w-full flex sm:justify-center xl:justify-start">
               <button
                 onClick={goToHome}

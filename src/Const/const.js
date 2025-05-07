@@ -5,6 +5,7 @@ export const NAVEGACION = {
     heroDetails: '/hero/:heroId',
     mapDetails: '/map/:name',
     aboutUs: "/aboutus",
+    favourites: "/favourites",
     pageNotFound: "*"
 }
 

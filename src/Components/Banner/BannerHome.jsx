@@ -20,7 +20,7 @@ const BannerHome = () => {
 
   return (
     <div
-      className="w-full h-full xl:h-screen overflow-hidden grid md:place-items-center"
+      className="w-full h-full xl:h-screen overflow-hidden grid md:place-items-center pt-30"
      
     >
         <div className="absolute hidden -top-10 sm:-top-20 
@@ -97,7 +97,7 @@ const BannerHome = () => {
           />
         </li>
 
-        <li data-depth="0.2" className="layer absolute w-full h-full" >
+        <li data-depth="0.3" className="layer absolute w-full h-full" >
           <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/bltf38ff705499bfd25/660c5f692c8f66429a8483e2/Tracer.png" alt="" />
         </li>
       </ul>

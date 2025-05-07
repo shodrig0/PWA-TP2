@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom"
 import { NAVEGACION } from "../../Const/const"
 import Button from "../../Components/Button/Button"
+import usePageTitle from "../../Hooks/usePageTitle"
 
 
 const PageNotFound = () => {
+
+    usePageTitle()
 
     const navite = useNavigate()
     const handleBackToHome = () => {

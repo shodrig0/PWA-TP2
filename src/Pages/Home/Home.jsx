@@ -10,8 +10,12 @@ import BannerHome from "../../Components/Banner/BannerHome";
 import BtnPaginado from "../../Components/BtnPag/BtnPaginado";
 import Footer from "../../Components/Footerr/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
+import { useTranslation } from 'react-i18next'
 
-const Home = () => {
+
+function Home() {
+  const { t, i18n } = useTranslation();
+
 
   usePageTitle()
 
@@ -46,20 +50,24 @@ const Home = () => {
 
       <Header />
       <BannerHome />
+      
 
       <div className="flex w-full justify-center gap-4 py-4" style={{ backgroundColor: '#111F27' }}>
         <button
           className={`px-4 py-2 rounded ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}
         >
-          Heroes
+           {t("heroes")}
+          {/* Heroes */}
         </button>
         <button
           className={`px-4 py-2 rounded ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(false)}
         >
-          Maps
+          {/* Maps */}
+          {t("maps")}
         </button>
+        
       </div>
 
       {isHeroe ? (
@@ -71,6 +79,7 @@ const Home = () => {
           {loading ? (
             <div className="flex justify-center items-center min-h-screen">
               <img src="/spinerOverwatch.gif" alt="Loading..." />
+              
             </div>
           ) : (
             <ContainerCardHero heroes={heroesActuales} />
@@ -101,5 +110,6 @@ const Home = () => {
     </div>
   );
 }
+
 
 export default Home;

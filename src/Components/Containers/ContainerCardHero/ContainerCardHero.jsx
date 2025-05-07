@@ -8,7 +8,7 @@ function ContainerCardHeroe({ heroes }) {
   const { handleHeroClick, favourites, addFavouriteHero } = useHeroes()
 
   return (
-    <div className="w-full flex justify-center mt-6">
+    <div className="w-full flex justify-center mt-6  min-h-[600px]">
 
       <div className="
           grid 

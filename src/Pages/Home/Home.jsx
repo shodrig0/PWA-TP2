@@ -59,13 +59,11 @@ function Home() {
           onClick={() => setIsHeroe(true)}
         >
            {t("heroes")}
-          {/* Heroes */}
         </button>
         <button
           className={`px-4 cursor-pointer py-2 rounded z-20 ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(false)}
         >
-          {/* Maps */}
           {t("maps")}
         </button>
              
@@ -95,8 +93,6 @@ function Home() {
       ) : (
         <>
           <FilterContainer
-          // onOrderChange={orderAlphabetically}
-          // onRoleChange={onRoleChangeHandle}
           />
           {loading ? (
             <div className="flex justify-center items-center min-h-screen">

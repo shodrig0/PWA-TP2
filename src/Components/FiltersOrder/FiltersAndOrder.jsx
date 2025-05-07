@@ -1,4 +1,4 @@
-// components/Filter.jsx
+
 const FilterAndOrder = ({ onOrderChange }) => {
   return (
     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">

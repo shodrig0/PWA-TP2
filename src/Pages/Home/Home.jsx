@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { usePagination } from "../../Contexto/Pagination"
+import { useTranslation } from 'react-i18next'
 import useHeroes from "../../Hooks/useHeroes";
 import useMaps from "../../Hooks/useMaps";
 import usePageTitle from "../../Hooks/usePageTitle";
@@ -11,11 +12,10 @@ import BtnPaginado from "../../Components/BtnPag/BtnPaginado";
 import Footer from "../../Components/Footerr/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
 
-import { useTranslation } from 'react-i18next'
 
 
 function Home() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation()
 
   usePageTitle()
 
@@ -33,19 +33,19 @@ function Home() {
 
   const heroesActuales = heroes.slice(indexPrimerItem, indexUltimoItem);
   const mapsActuales = maps.slice(indexPrimerItem, indexUltimoItem);
-  
+
   useEffect(() => {
     setCurrentPage(1);
   }, [heroes, maps]);
 
   const handleMapModeChange = (value) => {
-    filterByGameMode(value); 
+    filterByGameMode(value);
   }
-  
+
   const handleMapOrderChange = (value) => {
     orderMapsAlphabetically(value);
   };
-  console.log(maps) 
+  console.log(maps)
   return (
     <div
       className="w-full min-h-screen"
@@ -61,12 +61,12 @@ function Home() {
       <BannerHome />
 
       <div className="flex w-full justify-center gap-4 py-4 relative z-10" style={{ backgroundColor: '#001922' }}>
- 
+
         <button
           className={`px-4 cursor-pointer py-2 rounded z-20 ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}
         >
-           {t("heroes")}
+          {t("heroes")}
         </button>
         <button
           className={`px-4 cursor-pointer py-2 rounded z-20 ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
@@ -75,23 +75,23 @@ function Home() {
           {t("maps")}
         </button>
         <img
-    src="/top_diver.png"
-    alt="TopDiviver"
-    className="absolute w-full -top-6 left-1/2 -translate-x-1/2   object-contain"
-  />
+          src="/top_diver.png"
+          alt="TopDiviver"
+          className="absolute w-full -top-6 left-1/2 -translate-x-1/2   object-contain"
+        />
       </div>
 
       {isHeroe ? (
         < >
-         <FilterContainer
-        onOrderChange={orderAlphabetically}
-        onRoleChange={onRoleChangeHandle}
-        isHeroe={isHeroe}
-        />
+          <FilterContainer
+            onOrderChange={orderAlphabetically}
+            onRoleChange={onRoleChangeHandle}
+            isHeroe={isHeroe}
+          />
           {loading ? (
             <div className="flex justify-center items-center min-h-screen">
-              <img src="/spinerOverwatch.gif" alt="Loading..."  className="h-100 w-100"/>
-              
+              <img src="/spinerOverwatch.gif" alt="Loading..." className="h-100 w-100" />
+
             </div>
           ) : (
             <ContainerCardHero heroes={heroesActuales} />
@@ -101,9 +101,9 @@ function Home() {
       ) : (
         <>
           <FilterContainer
-          onGameModeChange={handleMapModeChange}
-          onOrderChange={handleMapOrderChange}
-          isHeroe={isHeroe}
+            onGameModeChange={handleMapModeChange}
+            onOrderChange={handleMapOrderChange}
+            isHeroe={isHeroe}
           />
           {loading ? (
             <div className="flex justify-center items-center min-h-screen">
@@ -112,7 +112,7 @@ function Home() {
           ) : (
             <ContainerCardMap maps={mapsActuales} />
           )}
-          
+
         </>
       )}
       <BtnPaginado

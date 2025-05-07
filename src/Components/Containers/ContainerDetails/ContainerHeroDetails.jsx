@@ -1,32 +1,32 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import MaskedImage from "../../MaskedImage/MaskedImage";
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 
 const HeroDetails = () => {
-    const { heroId } = useParams();
-    const [hero, setHero] = useState(null);
-    const [openVideoIndex, setOpenVideoIndex] = useState(null);
-    const [error, setError] = useState(null);
+
+    const { heroId } = useParams()
+    const [hero, setHero] = useState(null)
+    const [openVideoIndex, setOpenVideoIndex] = useState(null)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         const heroDetails = async () => {
             try {
-                const resp = await fetch(`${import.meta.env.VITE_API_URL}/heroes/${heroId}`);
+                const resp = await fetch(`${import.meta.env.VITE_API_URL}/heroes/${heroId}`)
 
                 if (!resp.ok) {
-                    throw new Error('No hero');
+                    throw new Error('No hero')
                 }
 
-                const data = await resp.json();
-                setHero(data);
-                setError(null);
+                const data = await resp.json()
+                setHero(data)
+                setError(null)
             } catch (error) {
-                console.log('Error, no data', error);
-                setError('Unprocessable Content. Check the name!');
+                console.log('Error, no data', error)
+                setError('Unprocessable Content. Check the name!')
             }
-        };
-        heroDetails();
-    }, [heroId]);
+        }
+        heroDetails()
+    }, [heroId])
 
     if (error) {
         return (
@@ -34,26 +34,21 @@ const HeroDetails = () => {
                 <h1 className="text-4xl font-bold">Error</h1>
                 <p className="mt-4 text-lg">{error}</p>
             </div>
-        );
+        )
     }
 
     if (!hero) {
         return (
             <div className="flex justify-center items-center min-h-screen">
-                {/* Loading or spinner here */}
             </div>
-        );
+        )
     }
 
     return (
         <section className="p-6 max-w-6xl mx-auto text-white">
             <div className="bg-gray-900 rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
                 <div className="md:w-1/3 bg-gray-800 p-4 flex flex-col items-center">
-                    <img
-                        src={hero.portrait}
-                        alt={hero.name}
-                        className="rounded-lg mb-4 w-full h-auto object-contain"
-                    />
+                    <img src={hero.portrait} alt={hero.name} className="rounded-lg mb-4 w-full h-auto object-contain" />
                     <h2 className="text-3xl font-bold">{hero.name}</h2>
                     <p className="text-sm text-gray-400 mt-1 capitalize">{hero.role}</p>
                 </div>
@@ -67,18 +62,13 @@ const HeroDetails = () => {
                         <p><strong>Birthday:</strong> {hero.birthday}</p>
                         <p><strong>Total HP:</strong> {hero.hitpoints.total} (Health: {hero.hitpoints.health}, Armor: {hero.hitpoints.armor}, Shields: {hero.hitpoints.shields})</p>
                     </div>
-
                     <div>
                         <h3 className="text-xl font-semibold mt-6">Abilities</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                             {hero.abilities.map((ability, index) => (
                                 <div key={index} className="bg-gray-800 p-4 rounded-lg">
                                     <div className="flex items-center gap-3 mb-2">
-                                        <img
-                                            src={ability.icon}
-                                            alt={ability.name}
-                                            className="w-10 h-10"
-                                        />
+                                        <img src={ability.icon} alt={ability.name} className="w-10 h-10" />
                                         <h4 className="font-bold">{ability.name}</h4>
                                     </div>
                                     <p className="text-sm text-gray-300">{ability.description}</p>
@@ -107,36 +97,18 @@ const HeroDetails = () => {
                             ))}
                         </div>
                     </div>
-
                     <div>
                         <h3 className="text-xl font-semibold mt-6">Story</h3>
                         <p className="text-sm text-gray-300 italic mb-2">{hero.story.summary}</p>
                         {hero.story.chapters.map((chapter, index) => (
-    <div key={index} className="mt-4">
-        <h4 className="font-semibold">{chapter.title}</h4>
-        <p className="text-sm text-gray-300">{chapter.content}</p>
-        {chapter.picture && (
-            <div className="relative w-full h-96 mx-auto">
-                <img
-                    src={chapter.picture}
-                    alt={chapter.title}
-                    className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                />
-                <div className="absolute inset-0 z-10">
-      <MaskedImage url={chapter.picture}  />
-    </div>
-            </div>
-        )}
-    </div>
-))}
-
+                            <div key={index} className="mt-4">
+                                <h4 className="font-semibold">{chapter.title}</h4>
+                                <p className="text-sm text-gray-300">{chapter.content}</p>
+                                {chapter.picture && <img src={chapter.picture} alt={chapter.title} className="mt-2 rounded-lg" />}
+                            </div>
+                        ))}
                         {hero.story.media?.link && (
-                            <a
-                                href={hero.story.media.link}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-block mt-4 text-blue-400 underline"
-                            >
+                            <a href={hero.story.media.link} target="_blank" rel="noreferrer" className="inline-block mt-4 text-blue-400 underline">
                                 More info
                             </a>
                         )}
@@ -144,7 +116,7 @@ const HeroDetails = () => {
                 </div>
             </div>
         </section>
-    );
-};
+    )
+}
 
-export default HeroDetails;
+export default HeroDetails

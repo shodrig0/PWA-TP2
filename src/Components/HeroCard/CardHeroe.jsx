@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../Button/Button'
-import { iconRol } from '../../../public/js/logoRol'
+import { iconRol } from '../../utilsJS/logoRol'
 
 function CardHeroe({ name, portrait, role, onClick, isFavourite, addFavouriteHero }) {
   const iconRole = iconRol[role]

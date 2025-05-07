@@ -28,7 +28,15 @@ const Details = () => {
   // console.log(location.pathname)
 
   return (
-    <div className="bg-black pt-20 min-h-xl">
+    <div
+    className="w-full min-h-screen pt-20"
+    style={{
+      backgroundImage: `url('https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90')`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  >
       <Header />
       {loading ? (
         <div className="flex justify-center items-center min-h-screen">

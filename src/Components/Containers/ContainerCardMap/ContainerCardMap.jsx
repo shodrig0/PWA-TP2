@@ -7,7 +7,7 @@ function ContainerCardMap({ maps }) {
   const { handleMapClick, mapFavourites, addFavouriteMap } = useMaps()
 
   return (
-    <div className="w-full flex justify-center mt-6">
+    <div className="w-full flex justify-center pt-15">
       <div
         className="
           grid 

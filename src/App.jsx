@@ -8,6 +8,7 @@ import Landing from './Pages/Landing/Landing';
 import PageNotFound from './Pages/Error/404';
 import PageValidationError from './Pages/Error/422';
 import AboutUs from './Components/AboutUs/AboutUs';
+import './i18n'
 import './App.css'
 
 function App() {

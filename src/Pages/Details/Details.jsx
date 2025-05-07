@@ -20,9 +20,7 @@ const Details = () => {
 
   const loading = isHeroDetail ? heroesLoading : mapsLoading
 
-  const handleGoToHome = () => {
-    navigate(NAVEGACION.home)
-  }
+ 
 
   return (
     <div className="bg-black" >
@@ -35,11 +33,7 @@ const Details = () => {
         <>
           {isHeroDetail && <HeroDetails className="bg-black" />}
           {isMapDetail && <MapDetails className="bg-black" />}
-          <Button
-            className="fixed bottom-6 right-6 z-50 bg-orange-400 hover:bg-orange-500 text-black font-bold py-2 px-4 rounded shadow-lg"
-            onClick={handleGoToHome}
-            name="Back"
-          />
+          
         </>
       )}
     </div>

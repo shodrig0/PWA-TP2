@@ -9,8 +9,11 @@ import { usePagination } from "../../Contexto/Pagination"
 import Footer from "../../Components/Footerr/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
 import { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next'
+
 
 function Home() {
+  const { t, i18n } = useTranslation();
   const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
   const { maps } = useMaps();
   const { currentPage, setCurrentPage } = usePagination();
@@ -40,20 +43,24 @@ function Home() {
   
       <Header />
       <BannerHome />
+      
 
       <div className="flex w-full justify-center gap-4 py-4" style={{ backgroundColor: '#111F27' }}>
         <button
           className={`px-4 py-2 rounded ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}
         >
-          Heroes
+           {t("heroes")}
+          {/* Heroes */}
         </button>
         <button
           className={`px-4 py-2 rounded ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(false)}
         >
-          Maps
+          {/* Maps */}
+          {t("maps")}
         </button>
+        
       </div>
 
       {isHeroe ? (
@@ -65,6 +72,7 @@ function Home() {
           {loading ? (
             <div className="flex justify-center items-center min-h-screen">
               <img src="/spinerOverwatch.gif" alt="Loading..." />
+              
             </div>
           ) : (
             <ContainerCardHero heroes={heroesActuales} />

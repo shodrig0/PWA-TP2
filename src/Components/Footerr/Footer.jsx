@@ -1,8 +1,13 @@
 import React from 'react';
 import { Youtube, Facebook, Instagram } from 'lucide-react';
+import { useTranslation } from 'react-i18next'
 
 function Footer() {
+  const { t } = useTranslation(); // <<--- acá lo agregás
+
+
   return (
+    
     <footer className="bg-black w-full text-gray-300 py-8 px-4 text-sm">
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-y-6">
         
@@ -27,17 +32,17 @@ function Footer() {
             className="h-14 object-contain"
           />
           <p className="text-xs md:text-sm leading-snug max-w-md">
-            &trade; &amp; &copy; 2025 Blizzard Entertainment, Inc. Todos los derechos reservados. Blizzard y Overwatch son marcas comerciales o marcas registradas de Blizzard Entertainment, Inc.
+            &trade; &amp; &copy; 2025 Blizzard Entertainment, Inc. {t('footer.rights')}
           </p>
         </div>
 
         {/* Enlaces */}
         <nav className="flex flex-wrap justify-center gap-4 text-center text-xs md:text-sm">
-          <a href="#" className="hover:underline">AVISO DE PRIVACIDAD</a>
-          <a href="#" className="hover:underline">TÉRMINOS DE USO</a>
-          <a href="#" className="hover:underline">POLÍTICA DE COOKIES</a>
-          <a href="#" className="hover:underline">INFORMACIÓN DE LA EMPRESA</a>
-          <a href="#" className="hover:underline">PREFERENCIAS DE COOKIES</a>
+          <a href="#" className="hover:underline">{t('footer.privacy')}</a>
+          <a href="#" className="hover:underline">{t('footer.terms')}</a>
+          <a href="#" className="hover:underline">{t('footer.cookies')}</a>
+          <a href="#" className="hover:underline">{t('footer.info')}</a>
+          <a href="#" className="hover:underline">{t('footer.preferences')}</a>
         </nav>
 
         {/* Imágenes ESRB */}

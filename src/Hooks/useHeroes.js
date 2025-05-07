@@ -6,6 +6,10 @@ const useHeroes = () => {
 
     const [heroes, setHeroes] = useState([])
     const [filteredHeroes, setFilteredHeroes] = useState([])
+    const [favourites, setFavourites] = useState(() => {
+        const storedFavourites = localStorage.getItem("favourites")
+        return storedFavourites ? JSON.parse(storedFavourites) : []
+    })
     const [searchValue, setSearchValue] = useState("")
     const [loading, setLoading] = useState(false)
 
@@ -38,6 +42,10 @@ const useHeroes = () => {
         getHeroes()
     }, [getHeroes])
 
+    useEffect(() => {
+        localStorage.setItem("favourites", JSON.stringify(favourites))
+    }, [favourites])
+
     const onSearchChangeHandle = (value) => {
         setSearchValue(value)
     }
@@ -62,10 +70,23 @@ const useHeroes = () => {
         }
     }
 
+    const addFavouriteHero = (heroId) => {
+        setFavourites((hFavourite) => {
+            const updatedFavourites = hFavourite.includes(heroId)
+                ? hFavourite.filter((key) => key !== heroId)
+                : [...hFavourite, heroId]
+            console.log("Heroes actualizados:", updatedFavourites)
+            return updatedFavourites
+        })
+    }
+
+    const favHeroes = heroes.filter((hero) => favourites.includes(hero.key))
+
     const handleHeroClick = (heroId) => {
         const url = NAVEGACION.heroDetails.replace(':heroId', heroId)
         navigate(url)
     }
+
 
     return {
         heroes: filteredHeroes,
@@ -74,7 +95,10 @@ const useHeroes = () => {
         orderAlphabetically,
         onSearchChangeHandle,
         loading,
-        handleHeroClick
+        favourites,
+        addFavouriteHero,
+        handleHeroClick,
+        favHeroes
     }
 
 }

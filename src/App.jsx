@@ -7,22 +7,28 @@ import Details from './Pages/Details/Details';
 import Landing from './Pages/Landing/Landing';
 import PageNotFound from './Pages/Error/404';
 import PageValidationError from './Pages/Error/422';
+<<<<<<< HEAD
 import AboutUs from './Components/AboutUs/AboutUs';
 import './i18n'
+=======
+import AboutUs from './Pages/AboutUs/AboutUs';
+import Favourites from './Pages/Favourites/Favourites';
+>>>>>>> df2c3506a63ca2979f25c036a3d159c360d041a1
 import './App.css'
 
-function App() {
-  // const [count, setCount] = useState(0)
+const App = () => {
+
   return (
     <PaginationProvider >
       <BrowserRouter>
         <Routes>
           <Route element={<Landing />} path={NAVEGACION.landing} />
           <Route element={<Home />} path={NAVEGACION.home} />
-          <Route path={NAVEGACION.heroDetails} element={<Details />} />
-          <Route path={NAVEGACION.mapDetails} element={<Details />} />
+          <Route element={<Details />} path={NAVEGACION.heroDetails} />
+          <Route element={<Details />} path={NAVEGACION.mapDetails} />
           <Route element={<PageNotFound />} path={NAVEGACION.pageNotFound} />
           <Route element={<PageValidationError />} path={NAVEGACION.details} />
+          <Route element={<Favourites />} path={NAVEGACION.favourites} />
           <Route element={<AboutUs />} path={NAVEGACION.aboutUs} />
         </Routes>
       </BrowserRouter>

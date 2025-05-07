@@ -6,11 +6,12 @@ const HeroDetails = () => {
     const { heroId } = useParams()
     const [hero, setHero] = useState(null)
     const [openVideoIndex, setOpenVideoIndex] = useState(null)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         const heroDetails = async () => {
             try {
-                const resp = await fetch(`${import.meta.env.VITE_API_URL}/heroes/${heroId}`) // pendiente
+                const resp = await fetch(`${import.meta.env.VITE_API_URL}/heroes/${heroId}`)
 
                 if (!resp.ok) {
                     throw new Error('No hero')
@@ -18,14 +19,30 @@ const HeroDetails = () => {
 
                 const data = await resp.json()
                 setHero(data)
+                setError(null)
             } catch (error) {
                 console.log('Error, no data', error)
+                setError('Unprocessable Content. Check the name!')
             }
         }
         heroDetails()
     }, [heroId])
 
-    if (!hero) return <p>Loading...</p>
+    if (error) {
+        return (
+            <div className="flex flex-col items-center justify-center min-h-screen text-white">
+                <h1 className="text-4xl font-bold">Error</h1>
+                <p className="mt-4 text-lg">{error}</p>
+            </div>
+        )
+    }
+
+    if (!hero) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+            </div>
+        )
+    }
 
     return (
         <section className="p-6 max-w-6xl mx-auto text-white">

@@ -5,6 +5,11 @@ import { NAVEGACION } from "../Const/const"
 function useMaps() {
     const [maps, setMaps] = useState([])
 
+    const [mapFavourites, setMapFavourites] = useState(() => {
+        const storedMFavourites = localStorage.getItem("mapFavourites")
+        return storedMFavourites ? JSON.parse(storedMFavourites) : []
+    })
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -26,6 +31,10 @@ function useMaps() {
         fetchMaps()
     }, [])
 
+    useEffect(() => {
+        localStorage.setItem("mapFavourites", JSON.stringify(mapFavourites))
+    }, [mapFavourites])
+
 
     const getMapByName = useCallback((name) => {
         if (!name) {
@@ -45,12 +54,31 @@ function useMaps() {
         return foundMap || null
     }, [maps])
 
+    const addFavouriteMap = (mapId) => {
+        setMapFavourites((mFavourite) => {
+            const updatedFavouriteM = mFavourite.includes(mapId)
+                ? mFavourite.filter((key) => key !== mapId)
+                : [...mFavourite, mapId]
+            console.log("Mapas actualizados:", updatedFavouriteM)
+            return updatedFavouriteM
+        })
+    }
+
+    const favMaps = maps.filter((map) => mapFavourites.includes(map.name))
+
     const handleMapClick = (mapId) => {
         const url = NAVEGACION.mapDetails.replace(':name', mapId)
         navigate(url)
     }
 
-    return { maps, getMapByName, handleMapClick }
+    return {
+        maps,
+        getMapByName,
+        handleMapClick,
+        mapFavourites,
+        addFavouriteMap,
+        favMaps
+    }
 }
 
 export default useMaps

@@ -4,7 +4,7 @@ import useMaps from '../../../Hooks/useMaps'
 
 function ContainerCardMap({ maps }) {
 
-  const { handleMapClick } = useMaps()
+  const { handleMapClick, mapFavourites, addFavouriteMap } = useMaps()
 
   return (
     <div className="w-full flex justify-center mt-6">
@@ -29,6 +29,8 @@ function ContainerCardMap({ maps }) {
             gamemodes={mapa.gamemodes}
             location={mapa.location}
             onClick={() => handleMapClick(mapa.name)}
+            isFavourite={mapFavourites.includes(mapa.name)}
+            addFavouriteMap={() => addFavouriteMap(mapa.name)}
           />
         ))}
       </div>

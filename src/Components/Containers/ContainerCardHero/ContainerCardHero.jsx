@@ -5,8 +5,12 @@ import { useTranslation } from 'react-i18next';
 
 function ContainerCardHeroe({ heroes }) {
 
+<<<<<<< HEAD
   const { handleHeroClick } = useHeroes()
   const { t } = useTranslation();
+=======
+  const { handleHeroClick, favourites, addFavouriteHero } = useHeroes()
+>>>>>>> df2c3506a63ca2979f25c036a3d159c360d041a1
 
   return (
     <div className="w-full flex justify-center mt-6">
@@ -30,6 +34,8 @@ function ContainerCardHeroe({ heroes }) {
             // role={t(`filters.roles.${hero.role}`)} // traducido
             role={hero.role} // sin traducir, para imagen
             onClick={() => handleHeroClick(hero.key)}
+            isFavourite={favourites.includes(hero.key)}
+            addFavouriteHero={() => addFavouriteHero(hero.key)}
           />
         ))}
       </div>

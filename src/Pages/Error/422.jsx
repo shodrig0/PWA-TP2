@@ -2,8 +2,11 @@ import { useNavigate } from "react-router-dom"
 import { NAVEGACION } from "../../Const/const"
 import { useEffect } from "react"
 import Button from "../../Components/Button/Button"
+import usePageTitle from "../../Hooks/usePageTitle"
 
 const PageValidationError = () => {
+
+    usePageTitle()
 
     const navigate = useNavigate()
 

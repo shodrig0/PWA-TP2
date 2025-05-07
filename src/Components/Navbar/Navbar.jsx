@@ -1,5 +1,5 @@
 import { NAVEGACION } from '../../Const/const' // ?
-import { useState,useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Input from '../Input/Input'
 import Button from '../Button/Button'
@@ -13,7 +13,6 @@ const Navbar = () => {
     const { heroes, handleHeroClick } = useHeroes()
     const { maps, handleMapClick } = useMaps()
     const [searchValue, setSearchValue] = useState("")
-    const [visible, setVisible] = useState(true)
     const navigate = useNavigate()
 
     const toggleLanguage = () => {
@@ -68,7 +67,7 @@ const Navbar = () => {
             <Button className="bottom-6 right-6 z-50 bg-orange-400 hover:bg-orange-500 text-black font-bold py-2 px-4 rounded shadow-lg" onClick={handleGoToHome} name={t("home")} />
             
             <Input
-                className="border w-xs border-gray-300 rounded-lg ml-3 p-2 md:w-1/2"
+                className="border w-xs border-gray-300 rounded-lg ml-3 p-2"
                 value={searchValue}
                 onChange={onSearchChangeHandle}
                 placeholder={t("search")}            />
@@ -80,7 +79,7 @@ const Navbar = () => {
                         filteredHeroes.map(hero => (
                             <div
                                 key={hero.name}
-                                className="p-2 hover:bg-gray-600 cursor-pointer flex items-center"
+                                className="p-2 w-xs hover:bg-gray-600 cursor-pointer flex items-center"
                                 onClick={() => handleHeroClick(hero.key)}
                             >
                                 <img src={hero.portrait} alt={hero.name} className="w-8 h-8 mr-2 rounded-full" />

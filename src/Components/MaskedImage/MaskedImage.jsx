@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function MaskedImage({url}) {
+export default function MaskedImage({ url }) {
   const imagenRef = useRef(null);
   const maskedImageRef = useRef(null);
   const lastScrollY = useRef(window.scrollY);
@@ -21,21 +21,19 @@ export default function MaskedImage({url}) {
       const scrollingDown = currentScrollY > lastScrollY.current;
       lastScrollY.current = currentScrollY;
 
-      // Activar si al menos el 40% es visible, viene desde abajo y aún no se ha animado
+      // Activar si al menos el 40% es visible y viene desde abajo (scrolling down)
       if (visibleRatio >= 0.4 && scrollingDown && !hasAnimated.current) {
         maskedImage.classList.remove("mask-animation");
-        void maskedImage.offsetWidth;
+        void maskedImage.offsetWidth;  // Forzar reflow
         maskedImage.classList.add("mask-animation");
         hasAnimated.current = true;
       }
 
-      // Resetear si salió más del 80% hacia arriba
-      const isAboveViewport = rect.bottom < window.innerHeight * 0.2;
+      // Solo reiniciar animación si la imagen se ha salido completamente por arriba
+      const isAboveViewport = rect.bottom < 0; // Si la imagen está por encima del viewport
+      const isBelowViewport = rect.top > window.innerHeight; // Si la imagen está completamente debajo del viewport
 
-      // Resetear si salió completamente hacia abajo
-      const isBelowViewport = rect.top > window.innerHeight;
-
-      if (isAboveViewport || isBelowViewport) {
+      if (isAboveViewport && hasAnimated.current) {
         hasAnimated.current = false;
         maskedImage.classList.remove("mask-animation");
       }
@@ -50,7 +48,7 @@ export default function MaskedImage({url}) {
   }, []);
 
   return (
-    <div className="relative w-[950px] h-[566px] overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden hidden xl:block">
       <div
         ref={maskedImageRef}
         className="absolute inset-0 bg-cover bg-no-repeat"

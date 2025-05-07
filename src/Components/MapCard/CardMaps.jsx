@@ -33,13 +33,13 @@ function CardMaps({ name, screenshot, gamemodes, location, onClick, isFavourite,
       </div>
 
       {/* Favourite checkbox */}
-      <div className="absolute top-9 left-9 z-20">
+      <div className="absolute top-9 left-9 z-20 cursor-pointer">
         <label className="flex items-center space-x-2">
           <input
             type="checkbox"
             checked={isFavourite}
             onChange={addFavouriteMap}
-            className="w-5 h-5"
+            className="w-5 h-5 cursor-pointer"
           />
           <span className="text-white text-sm">Favourite</span>
         </label>

@@ -6,7 +6,7 @@ function CardHeroe({ name, portrait, role, onClick, isFavourite, addFavouriteHer
   const iconRole = iconRol[role]
   return (
     <div
-      className="relative group  sm:w-[300px]  mx-auto my-6 m-auto  h-[405px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg  cursor-pointer"
+      className="relative group  sm:w-[300px]  mx-auto my-6 m-auto  h-[405px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg  "
     >
 
       <div className="relative w-[300px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">
@@ -44,13 +44,13 @@ function CardHeroe({ name, portrait, role, onClick, isFavourite, addFavouriteHer
         />
         <div className=" h-21 md:h-28 px-6 py-5 pr-10 relative z-10"></div>
       </div>
-      <div className="absolute top-20 left-10 md:top-10 md:left-9 z-20">
+      <div className="absolute top-20 left-10 md:top-10 md:left-9 z-20 ">
         <label className="flex items-center space-x-2">
           <input
             type="checkbox"
             checked={isFavourite}
             onChange={addFavouriteHero}
-            className="md:w-5 md:h-5 w-7 h-7"
+            className="md:w-5 md:h-5 w-7 h-7 cursor-pointer"
           />
         </label>
       </div>

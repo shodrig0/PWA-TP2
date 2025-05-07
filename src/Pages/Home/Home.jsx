@@ -55,14 +55,14 @@ function Home() {
       <div className="flex w-full justify-center gap-4 py-4 relative z-10" style={{ backgroundColor: '#001922' }}>
  
         <button
-          className={`px-4 py-2 rounded z-20 ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
+          className={`px-4 cursor-pointer py-2 rounded z-20 ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}
         >
            {t("heroes")}
           {/* Heroes */}
         </button>
         <button
-          className={`px-4 py-2 rounded z-20 ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
+          className={`px-4 cursor-pointer py-2 rounded z-20 ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(false)}
         >
           {/* Maps */}

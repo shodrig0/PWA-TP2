@@ -25,7 +25,15 @@ const Favourites = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div
+    className="w-full min-h-screen pt-20"
+    style={{
+      backgroundImage: `url('https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90')`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  >
             <Header />
             <div className="container mx-auto px-4 py-8">
                 <Title className="text-3xl font-bold text-gray-800 mb-6" title={"Favourites"} />

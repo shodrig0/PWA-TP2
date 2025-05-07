@@ -30,12 +30,19 @@ const AboutUs = () => {
   style={{
     backgroundImage: "url('/bannerdos.png')",
     backgroundRepeat: "no-repeat",
-    
     backgroundPosition: "center",
+    WebkitMaskImage:
+      "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
+    maskImage:
+      "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
+    WebkitMaskRepeat: "no-repeat",
+    maskRepeat: "no-repeat",
+    WebkitMaskSize: "100% 100%",
+    maskSize: "100% 100%",
   }}
 >
-  <div className="w-full flex justify-center py-10 ">
-    <div className="bg-white/10  p-6 rounded-xl max-w-4xl w-full mx-4 shadow-lg">
+  <div className="w-full flex justify-center py-10">
+    <div className="bg-white/10 backdrop-blur-md p-10 rounded-xl max-w-4xl w-full mx-4 shadow-lg">
       <ContainerAboutUs />
     </div>
   </div>

@@ -6,7 +6,7 @@ const ContainerAboutUs = () => {
     const user = useAboutUs()
 
     return (
-        <section className="p-6 max-w-6xl mx-auto text-white mt-30">
+        <section className=" max-w-6xl mx-auto w-full text-white mt-30">
             <div className=" rounded-2xl  backdrop-blur-[5px] shadow-lg overflow-hidden">
                 <Title className="text-3xl font-bold text-center py-6 " title={"Development Team"} />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">

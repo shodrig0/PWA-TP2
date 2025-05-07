@@ -11,7 +11,8 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import Favourites from './Pages/Favourites/Favourites';
 import './App.css'
 
-function App() {
+const App = () => {
+
   return (
     <PaginationProvider >
       <BrowserRouter>

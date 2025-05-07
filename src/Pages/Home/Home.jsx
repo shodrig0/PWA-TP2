@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { usePagination } from "../../Contexto/Pagination"
 import useHeroes from "../../Hooks/useHeroes";
 import useMaps from "../../Hooks/useMaps";
+import usePageTitle from "../../Hooks/usePageTitle";
 import Header from "../../Components/Header/Header";
 import ContainerCardHero from "../../Components/Containers/ContainerCardHero/ContainerCardHero";
 import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap";
@@ -10,7 +11,10 @@ import BtnPaginado from "../../Components/BtnPag/BtnPaginado";
 import Footer from "../../Components/Footerr/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
 
-function Home() {
+const Home = () => {
+
+  usePageTitle()
+
   const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
   const { maps } = useMaps();
   const { currentPage, setCurrentPage } = usePagination();
@@ -27,6 +31,8 @@ function Home() {
   useEffect(() => {
     setCurrentPage(1);
   }, [heroes, maps]);
+
+
   return (
     <div
       className="w-full min-h-screen"

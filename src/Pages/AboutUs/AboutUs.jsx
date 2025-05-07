@@ -4,8 +4,11 @@ import Button from "../../Components/Button/Button"
 import ContainerAboutUs from "../../Components/Containers/ContainerAboutUs/ContainerAboutUs"
 import Header from "../../Components/Header/Header"
 import Footer from "../../Components/Footerr/Footer"
+import usePageTitle from "../../Hooks/usePageTitle"
 
 const AboutUs = () => {
+
+    usePageTitle()
 
     const navigate = useNavigate()
     const handleGoToHome = () => {

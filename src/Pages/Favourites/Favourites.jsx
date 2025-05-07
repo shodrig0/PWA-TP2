@@ -8,8 +8,11 @@ import ContainerCardHeroe from "../../Components/Containers/ContainerCardHero/Co
 import ContainerCardMap from "../../Components/Containers/ContainerCardMap/ContainerCardMap"
 import useHeroes from "../../Hooks/useHeroes"
 import useMaps from "../../Hooks/useMaps"
+import usePageTitle from "../../Hooks/usePageTitle"
 
 const Favourites = () => {
+
+    usePageTitle()
 
     const { favHeroes } = useHeroes()
     const { favMaps } = useMaps()

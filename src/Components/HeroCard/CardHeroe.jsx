@@ -1,20 +1,10 @@
 import React from 'react'
+import { iconRol } from '../../../public/js/logoRol'
 
 function CardHeroe({ name, portrait, role, onClick }) {
 
-  // let bgCard = "";
-  // if (role == "tank") {
-  //   bgCard = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Via2t5ZTlrcHFvbng4dW51cG55ZWZjNndiY2wydWp3bHM4d3Z3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cMhglZMLwT8e1jYkfC/giphy.gif"
-  // } else if (role == "damage") {
-  //   bgCard = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN20zejM1c2xzczNseWo4bWNkYmw5N3p6cmN0bGtyZzhqY3U1Zm85NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NLwQZlo5wA8su4kYhL/giphy.gif"
-  // } else if (role == "support") {
-  //   bgCard = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZhNWE4MnBsZ2t1NmpkYWFhaHozOTgwaTdvYjgybnJmNmE3NnVwOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GOFp6uulTA5MzD7hJq/giphy.gif"
-  // }
-  let iconRol = {
-    tank: "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/bltf0889daa1ef606db/6504cff74d2a764cb7973991/Tank.svg?format=webply&quality=90",
-    damage: "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt05d482c88096959a/6504cff7d9caa1285f64b6bd/Damage.svg?format=webply&quality=90",
-    support: "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt3ccd5df488163b33/6504cff7fc2ae4d7c50445c4/Support.svg?format=webply&quality=90"
-  }
+ const iconRole = iconRol[role]
+ 
   return (
     <div
       className="relative group  sm:w-[300px]  mx-auto my-6 m-auto  h-[405px] md:w-[200px] md:h-[280px] overflow-hidden rounded-xl md:mx-5 shadow-lg  cursor-pointer"
@@ -50,7 +40,7 @@ function CardHeroe({ name, portrait, role, onClick }) {
 
         <h3 className="absolute bottom-13.5 left-32 md:bottom-9  md:left-21 font-primary uppercase text-white font-semibold z-20 text-xm md:text-xs">{role}</h3>
         <img
-          src={iconRol[role]}
+          src={iconRole}
           alt="role"
           className="absolute bottom-12.25 left-12 md:left-8.5 md:bottom-8.5  w-10 h-10  md:w-6 md:h-6  opacity-75 z-20"
         />

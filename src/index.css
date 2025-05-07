@@ -3,3 +3,18 @@
 @theme {
     --font-primary:"Aldrich", "sans-serif";
 }
+
+@keyframes addColor {
+    0% {
+      -webkit-mask-position: 0% 0%;
+      mask-position: 0% 0%;
+    }
+    100% {
+      -webkit-mask-position: 100% 0%;
+      mask-position: 100% 0%;
+    }
+  }
+  
+  .mask-animation {
+    animation: addColor 1s steps(23) forwards;
+  }

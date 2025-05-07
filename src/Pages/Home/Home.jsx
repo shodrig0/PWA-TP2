@@ -9,6 +9,7 @@ import { usePagination } from "../../Contexto/Pagination"
 import Footer from "../../Components/Footerr/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
 import { useState, useEffect } from "react";
+import MaskedImage from "../../Components/MaskedImage/MaskedImage";
 
 function Home() {
   const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
@@ -37,7 +38,7 @@ function Home() {
       backgroundRepeat: "no-repeat",
     }}
   >
-  
+
       <Header />
       <BannerHome />
 
@@ -92,6 +93,8 @@ function Home() {
           )}
         </>
       )}
+
+<MaskedImage/>
       <BtnPaginado
         elementosPorPagina={elementosPorPagina}
         totalItems={isHeroe ? heroes.length : maps.length}

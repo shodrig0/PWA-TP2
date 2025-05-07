@@ -17,11 +17,11 @@ import { useTranslation } from 'react-i18next'
 function Home() {
   const { t, i18n } = useTranslation();
 
-
   usePageTitle()
 
   const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
-  const { maps } = useMaps();
+  const { maps, filterByGameMode, orderMapsAlphabetically } = useMaps();
+
   const { currentPage, setCurrentPage } = usePagination();
 
 
@@ -33,11 +33,19 @@ function Home() {
 
   const heroesActuales = heroes.slice(indexPrimerItem, indexUltimoItem);
   const mapsActuales = maps.slice(indexPrimerItem, indexUltimoItem);
+  
   useEffect(() => {
     setCurrentPage(1);
   }, [heroes, maps]);
 
-
+  const handleMapModeChange = (value) => {
+    filterByGameMode(value); 
+  }
+  
+  const handleMapOrderChange = (value) => {
+    orderMapsAlphabetically(value);
+  };
+  console.log(maps) 
   return (
     <div
       className="w-full min-h-screen"
@@ -59,16 +67,13 @@ function Home() {
           onClick={() => setIsHeroe(true)}
         >
            {t("heroes")}
-          {/* Heroes */}
         </button>
         <button
           className={`px-4 cursor-pointer py-2 rounded z-20 ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(false)}
         >
-          {/* Maps */}
           {t("maps")}
         </button>
-             
         <img
     src="/top_diver.png"
     alt="TopDiviver"
@@ -78,10 +83,11 @@ function Home() {
 
       {isHeroe ? (
         < >
-          <FilterContainer
-            onOrderChange={orderAlphabetically}
-            onRoleChange={onRoleChangeHandle}
-          />
+         <FilterContainer
+        onOrderChange={orderAlphabetically}
+        onRoleChange={onRoleChangeHandle}
+        isHeroe={isHeroe}
+        />
           {loading ? (
             <div className="flex justify-center items-center min-h-screen">
               <img src="/spinerOverwatch.gif" alt="Loading..."  className="h-100 w-100"/>
@@ -95,8 +101,9 @@ function Home() {
       ) : (
         <>
           <FilterContainer
-          // onOrderChange={orderAlphabetically}
-          // onRoleChange={onRoleChangeHandle}
+          onGameModeChange={handleMapModeChange}
+          onOrderChange={handleMapOrderChange}
+          isHeroe={isHeroe}
           />
           {loading ? (
             <div className="flex justify-center items-center min-h-screen">
@@ -105,6 +112,7 @@ function Home() {
           ) : (
             <ContainerCardMap maps={mapsActuales} />
           )}
+          
         </>
       )}
       <BtnPaginado

@@ -3,7 +3,7 @@ import { Youtube, Facebook, Instagram } from 'lucide-react';
 import { useTranslation } from 'react-i18next'
 
 function Footer() {
-  const { t } = useTranslation(); // <<--- acá lo agregás
+  const { t } = useTranslation(); 
 
 
   return (

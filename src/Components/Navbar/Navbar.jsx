@@ -110,10 +110,10 @@ const Navbar = () => {
 
             
                 
-            <Button className="w-xs font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToFavourites}  name={t("favourites")} />
-            <Button className=" w-xs font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToAboutUs} name={t("aboutUs")}/>
+            <Button className=" font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToFavourites}  name={t("favourites")} />
+            <Button className="  font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToAboutUs} name={t("aboutUs")}/>
             <Button />
-            <Button className=" w-xs font-primary w-full text-xs md:text-xl cursor-pointer" onClick={toggleLanguage}  name={`🌐 ${i18n.language.toUpperCase()}`} />    
+            <Button className="  font-primary w-full text-xs md:text-xl cursor-pointer" onClick={toggleLanguage}  name={`🌐 ${i18n.language.toUpperCase()}`} />    
 </div>
     )
 }

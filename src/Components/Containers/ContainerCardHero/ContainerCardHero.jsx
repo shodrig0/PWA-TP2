@@ -1,15 +1,14 @@
 import React from 'react'
 import CardHeroe from '../../HeroCard/CardHeroe'
 import useHeroes from '../../../Hooks/useHeroes'
-// import { useTranslation } from 'react-i18next';
 
 function ContainerCardHeroe({ heroes }) {
 
-  // const { t } = useTranslation();
+
   const { handleHeroClick, favourites, addFavouriteHero } = useHeroes()
 
   return (
-    <div className="w-full flex justify-center mt-6">
+    <div className="w-full flex justify-center mt-6  min-h-[600px]">
 
       <div className="
           grid 

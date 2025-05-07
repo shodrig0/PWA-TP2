@@ -21,7 +21,7 @@ const ContainerHeroDetailsdos = () => {
 
         const data = await resp.json();
         setHero(data);
-        setActiveIndex(null); // Sin habilidad activa al inicio
+        setActiveIndex(null); 
         setIsPlaying(false);
       } catch (error) {
         console.log("Error, no data", error);
@@ -53,7 +53,6 @@ const ContainerHeroDetailsdos = () => {
 
   return (
     <div className="w-full h-full">
-      {/* Banner superior con imagen de fondo */}
       <div
         className="h-screen bg-cover bg-center w-full relative"
         style={{ backgroundImage: `url(${bgImage})` }}
@@ -86,8 +85,6 @@ const ContainerHeroDetailsdos = () => {
           </div>
         </section>
       </div>
-
-      {/* Sección de habilidades con video */}
       <div className="relative w-full h-[600px] text-white overflow-hidden bg-black">
         <video
           ref={videoRef}
@@ -109,8 +106,6 @@ const ContainerHeroDetailsdos = () => {
               {active?.description ?? backgroundAbility.description}
             </p>
           </div>
-
-          {/* Botones de habilidades */}
           <div className="flex flex-wrap justify-center gap-4 mb-6">
             {hero.abilities.map((ability, index) => (
               <button
@@ -135,8 +130,6 @@ const ContainerHeroDetailsdos = () => {
               </button>
             ))}
           </div>
-
-          {/* Botón de pausa/reproducir */}
           <button
             onClick={() => {
               if (videoRef.current) {
@@ -159,8 +152,6 @@ const ContainerHeroDetailsdos = () => {
           </button>
         </div>
       </div>
-
-      {/* Historia del héroe */}
       <div className="px-6 max-w-4xl mx-auto text-white mt-10 mb-16">
         <h3 className="text-2xl font-bold mb-4">Story</h3>
         <p className="text-sm text-gray-300 italic mb-4">{hero.story.summary}</p>
@@ -170,14 +161,11 @@ const ContainerHeroDetailsdos = () => {
             <p className="text-sm text-gray-300 mt-1">{chapter.content}</p>
             {chapter.picture && (
   <div className="relative w-[950px] h-[566px] mx-auto">
-    {/* Imagen de fondo (color) */}
     <img
       src={chapter.picture}
       alt={chapter.title}
       className="absolute inset-0 w-full h-full object-cover rounded-lg"
     />
-
-    {/* Componente con máscara encima */}
     <div className="absolute inset-0 z-10">
       <MaskedImage url={chapter.picture} />
     </div>

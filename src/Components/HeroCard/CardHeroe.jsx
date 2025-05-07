@@ -12,7 +12,6 @@ function CardHeroe({ name, portrait, role, onClick, isFavourite, addFavouriteHer
       <div className="relative w-[300px] md:w-[200px] md:h-[256px] overflow-hidden rounded-xl mx-auto shadow-lg my-5">
         <div
           className="absolute inset-0 bg-cover bg-center bg-opacity-50 z-0  bg-black/20 rounded-xl overflow-hidden shadow-md border border-white/10 hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out"
-        // style={{ backgroundImage: `url("${bgCard}")` }}
         ></div>
         <div className="flex justify-center items-center aspect-square  relative  bg-white/0">
           <img

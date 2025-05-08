@@ -7,14 +7,6 @@
   "noMapsFound": "No se encontraron mapas",
   "favourites": "Favoritos",
   "aboutUs": "Sobre nosotros",
-  "filters": {
-    "rol": {
-      "all": "Todos los roles",
-      "tank": "Tanque",
-      "damage": "Daño",
-      "support": "Soporte"
-    }
-  },
   "footer": {
     "rights": "Todos los derechos reservados. Blizzard y Overwatch son marcas comerciales o marcas registradas de Blizzard Entertainment, Inc.",
     "privacy": "AVISO DE PRIVACIDAD",
@@ -23,5 +15,12 @@
     "info": "INFORMACIÓN DE LA EMPRESA",
     "preferences": "PREFERENCIAS DE COOKIES"
   },
-  "details": "Detalles"
+  "details": "Detalles",
+  "Development Team": "Equipo de Desarrollo",
+    "Todos los roles": "Todos los roles",
+    "Tank": "Tanque",
+    "Damage": "Daño",
+    "Support": "Apoyo",
+        "Todos los modos": "Todos los modos"
+      
 }

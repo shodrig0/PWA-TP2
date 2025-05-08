@@ -1,15 +1,19 @@
 import SelectFilter from "../../FilterSelected/SelectFilter";
+import { useTranslation } from "react-i18next";
+
 
 const FilterContainer = ({ onOrderChange, onRoleChange, onGameModeChange, isHeroe }) => {
+  const { t } = useTranslation();
+
   const roleOptions = [
-    { value: "all", label: "Todos los roles" },
-    { value: "tank", label: "Tank" },
-    { value: "damage", label: "Damage" },
-    { value: "support", label: "Support" },
+    { value: "all", label: t("Todos los roles") },
+    { value: "tank", label: t("Tank") },
+    { value: "damage", label: t("Damage") },
+    { value: "support", label: t("Support") },
   ];
 
   const gameModeOptions = [
-    { value: "all", label: "Todos los modos" },
+    { value: "all", label: t("Todos los modos") },
     { value: "assault", label: "Assault" },
     { value: "control", label: "Control" },
     { value: "escort", label: "Escort" },

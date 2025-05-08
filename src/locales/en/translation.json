@@ -5,16 +5,9 @@
   "home": "Home",
   "noHeroesFound": "No heroes found",
   "noMapsFound": "No maps found",
-  "favourites": "FAVOURITES",
+  "favourites": "Favourites",
   "aboutUs": "ABOUT US",
-  "filters": {
-    "rol": {
-      "all": "All roles",
-      "tank": "Tank",
-      "damage": "Damage",
-      "support": "Support"
-    }
-  },
+
   "footer": {
     "rights": "All rights reserved. Blizzard and Overwatch are trademarks or registered trademarks of Blizzard Entertainment, Inc.",
     "privacy": "PRIVACY NOTICE",
@@ -23,5 +16,29 @@
     "info": "COMPANY INFO",
     "preferences": "COOKIE PREFERENCES"
   },
-  "details": "Details"
+  "details": "Details",
+  "Hero Details": "Hero Details",
+  "Map Details": "Map Details",
+  "Home": "Home",
+  "About Us": "About Us",
+  "Welcome to our Project!": "Welcome to our Project!",
+  "404 Page Not Found": "404 Page Not Found",
+  "422 Error": "422 Error",
+  "Todos los modos": "All modes",
+  "Assault": "Assault",
+  "Control": "Control",
+  "Escort": "Escort",
+  "Hybrid": "Hybrid",
+  "Flashpoint": "Flashpoint",
+  "Push": "Push",
+  "Capture la bandera": "Capture the Flag",
+  "Deathmatch": "Deathmatch",
+  "Deathmatch en equipo": "Team Deathmatch",
+  "Development Team": "Development Team",
+    "Todos los roles": "All roles",
+    "Tank": "Tank",
+    "Damage": "Damage",
+    "Support": "Support"
+  
+
 }

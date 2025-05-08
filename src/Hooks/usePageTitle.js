@@ -17,6 +17,7 @@ const usePageTitle = () => {
         } else {
             switch (location.pathname) {
                 case NAVEGACION.home:
+                    
                     setPageTitle("Home")
                     break
                 case NAVEGACION.aboutUs:

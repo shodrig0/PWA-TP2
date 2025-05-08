@@ -7,10 +7,11 @@ import ContainerCardMap from "../../Components/Containers/ContainerCardMap/Conta
 import useHeroes from "../../Hooks/useHeroes"
 import useMaps from "../../Hooks/useMaps"
 import usePageTitle from "../../Hooks/usePageTitle"
+import { useTranslation } from 'react-i18next'
 
 const Favourites = () => {
 
-    // const { t } = useTranslation
+  const { t } = useTranslation()
 
     usePageTitle()
 
@@ -30,23 +31,23 @@ const Favourites = () => {
         >
             <Header />
             <div className="container mx-auto px-4 py-8">
-                <Title className="text-3xl font-bold text-black-800 mb-6" title={"Favourites"} />
+            <Title className="text-3xl font-bold text-black-800 mb-6" title={t("favourites")} />
 
                 <div className="mb-8">
-                    <Title className="text-2xl font-semibold text-black-700 mb-4" title={"Heroes"}></Title>
-                    {favHeroes.length > 0 ? (
+                <Title className="text-2xl font-semibold text-black-700 mb-4" title={t("heroes")} />
+                {favHeroes.length > 0 ? (
                         <ContainerCardHeroe heroes={favHeroes} />
                     ) : (
-                        <Title className="text-black-600" title={"No heroes added to favourites yet."}></Title>
+              <Title className="text-black-600" title={t("noHeroesFound")} />
                     )}
                 </div>
 
                 <div className="mb-8">
-                    <Title className="text-2xl font-semibold text-black-700 mb-4" title={"Maps"}></Title>
-                    {favMaps.length > 0 ? (
+                <Title className="text-2xl font-semibold text-black-700 mb-4" title={t("maps")} />
+                {favMaps.length > 0 ? (
                         <ContainerCardMap maps={favMaps} />
                     ) : (
-                        <Title className="text-black-600" title={"No maps added to favourites yet."}></Title>
+                        <Title className="text-black-600" title={t("noMapsFound")} />
                     )}
                 </div>
 

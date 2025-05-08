@@ -18,7 +18,7 @@ jgs  `"""""""""`  ,--`,--'\/\    /
 ---
 
 
-Este proyecto es una **Progressive Web Application (PWA)** desarrollada en **React**, **Vite** y **TailwindCSS**. La app está diseñada para explorar información sobre héroes y mapas del juego Overwatch, permitiendo a los usuarios filtrar, buscar, y guardar sus favoritos.
+Este proyecto es una **Single Page App (SPA)** desarrollada en **React**, **Vite** y **TailwindCSS**. La app está diseñada para explorar información sobre héroes y mapas del juego Overwatch, permitiendo a los usuarios filtrar, buscar, y guardar sus favoritos.
 
 ## Página disponible en Vercel
 

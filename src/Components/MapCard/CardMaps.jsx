@@ -16,16 +16,16 @@ function CardMaps({ name, screenshot, gamemodes, location, onClick, isFavourite,
       <div className="p-5">
         <h2 className="text-white text-2xl font-bold mb-2">{name}</h2>
 
-        <div className="flex flex-wrap gap-2">
-          {gamemodes.map((modo, index) => (
-            <span
-              key={index}
-              className="bg-emerald-600/80 text-white text-xs font-semibold px-3 py-1 rounded-full"
-            >
-              {modo}
-            </span>
-          ))}
-        </div>
+        <div className="flex flex-col gap-2 w-35">
+  {gamemodes.map((modo, index) => (
+    <span
+      key={index}
+      className="bg-emerald-600/80  text-white text-xs font-semibold px-3 py-1 rounded-full"
+    >
+      {modo}
+    </span>
+  ))}
+</div>
       </div>
 
       

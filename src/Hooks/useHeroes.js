@@ -12,7 +12,6 @@ const useHeroes = () => {
     })
     const [searchValue, setSearchValue] = useState("")
     const [loading, setLoading] = useState(false)
-
     const navigate = useNavigate()
 
     const getHeroes = useCallback(async () => {

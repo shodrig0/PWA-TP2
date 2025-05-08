@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { useTranslation } from "react-i18next";
 
 const HeroDetails = () => {
 
@@ -7,11 +8,12 @@ const HeroDetails = () => {
     const [hero, setHero] = useState(null)
     const [openVideoIndex, setOpenVideoIndex] = useState(null)
     const [error, setError] = useState(null)
-
+    const {t,  i18n } = useTranslation();
+console.log(i18n)
     useEffect(() => {
         const heroDetails = async () => {
             try {
-                const resp = await fetch(`${import.meta.env.VITE_API_URL}/heroes/${heroId}`)
+                const resp = await fetch(`${import.meta.env.VITE_API_URL}/heroes/${heroId}${i18n.language == "es" ? "?locale=es-es" : "?locale=en-us"}`)
 
                 if (!resp.ok) {
                     throw new Error('No hero')
@@ -26,7 +28,7 @@ const HeroDetails = () => {
             }
         }
         heroDetails()
-    }, [heroId])
+    }, [heroId,i18n.language])
 
     if (error) {
         return (
@@ -68,7 +70,13 @@ const HeroDetails = () => {
                             {hero.abilities.map((ability, index) => (
                                 <div key={index} className="bg-gray-800 p-4 rounded-lg">
                                     <div className="flex items-center gap-3 mb-2">
-                                        <img src={ability.icon} alt={ability.name} className="w-10 h-10" />
+                                    <div className="w-10 h-10">
+  <img
+    src={ability.icon}
+    alt={ability.name}
+    className="w-full h-full object-contain"
+  />
+</div>
                                         <h4 className="font-bold">{ability.name}</h4>
                                     </div>
                                     <p className="text-sm text-gray-300">{ability.description}</p>

@@ -8,7 +8,7 @@ function Footer() {
 
   return (
 
-    <footer className="bg-gray-800 w-full text-gray-300 py-8 px-4 text-sm" style={{ backgroundColor: '#111F27' }}>
+    <footer className="font-titillium-web bg-gray-800 w-full text-gray-300 py-8 px-4 text-sm" style={{ backgroundColor: '#111F27' }}>
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-y-6">
 
 

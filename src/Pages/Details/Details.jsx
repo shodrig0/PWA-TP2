@@ -1,7 +1,6 @@
 import { useLocation, useParams } from "react-router-dom"
 import Header from "../../Components/Header/Header"
 import Footer from "../../Components/Footerr/Footer"
-import Button from "../../Components/Button/Button"
 // import HeroDetailsdos from "../../Components/Containers/ContainerDetails/ContainerHeroDetailsdos" // <- ignorar
 import HeroDetails from "../../Components/Containers/ContainerDetails/ContainerHeroDetails"
 import MapDetails from "../../Components/Containers/ContainerDetails/ContainerMapDetails"
@@ -25,7 +24,7 @@ const Details = () => {
 
   return (
     <div
-      className="w-full min-h-screen pt-20"
+      className="w-full min-h-screen pt-20 font-titillium-web"
       style={{
         backgroundImage: `url('https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90')`,
         backgroundSize: "cover",

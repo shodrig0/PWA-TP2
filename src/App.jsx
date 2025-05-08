@@ -9,6 +9,7 @@ import PageNotFound from './Pages/Error/404';
 import PageValidationError from './Pages/Error/422';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Favourites from './Pages/Favourites/Favourites';
+import ScrollToTop from './Components/Button/ScrollToTop/ScrollToTop';
 import './App.css'
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           <Route element={<Favourites />} path={NAVEGACION.favourites} />
           <Route element={<AboutUs />} path={NAVEGACION.aboutUs} />
         </Routes>
+        <ScrollToTop />
       </BrowserRouter>
     </PaginationProvider>
   )

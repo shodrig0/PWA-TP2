@@ -39,17 +39,15 @@ function useMaps() {
   useEffect(() => {
     let updatedMaps = [...maps];
 
-    // Filtrado por modo
     if (mapMode !== "all") {
       updatedMaps = updatedMaps.filter((map) =>
         map.gamemodes?.includes(mapMode)
-      );
+      )
     }
 
-    // Orden alfabético
     updatedMaps.sort((a, b) => {
-      if (mapOrder === "asc") return a.name.localeCompare(b.name);
-      return b.name.localeCompare(a.name);
+      if (mapOrder === "asc") return a.name.localeCompare(b.name)
+      return b.name.localeCompare(a.name)
     });
 
     setFilteredMaps(updatedMaps);
@@ -101,7 +99,7 @@ function useMaps() {
   };
 
   return {
-    maps: filteredMaps, 
+    maps: filteredMaps,
     getMapByName,
     handleMapClick,
     mapFavourites,

@@ -11,41 +11,41 @@ import BannerHome from "../../Components/Banner/BannerHome";
 import BtnPaginado from "../../Components/BtnPag/BtnPaginado";
 import Footer from "../../Components/Footerr/Footer";
 import FilterContainer from "../../Components/Containers/FilterContainer/FilterContainer";
+import Button from "../../Components/Button/Button";
 
 
 
 function Home() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   usePageTitle()
 
-  const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes();
-  const { maps, filterByGameMode, orderMapsAlphabetically } = useMaps();
+  const { heroes, loading, orderAlphabetically, onRoleChangeHandle } = useHeroes()
+  const { maps, filterByGameMode, orderMapsAlphabetically } = useMaps()
 
-  const { currentPage, setCurrentPage } = usePagination();
+  const { currentPage, setCurrentPage } = usePagination()
 
 
-  const [isHeroe, setIsHeroe] = useState(true);
-  const elementosPorPagina = 8;
+  const [isHeroe, setIsHeroe] = useState(true)
+  const elementosPorPagina = 8
+  const indexUltimoItem = currentPage * elementosPorPagina
+  const indexPrimerItem = indexUltimoItem - elementosPorPagina
 
-  const indexUltimoItem = currentPage * elementosPorPagina;
-  const indexPrimerItem = indexUltimoItem - elementosPorPagina;
-
-  const heroesActuales = heroes.slice(indexPrimerItem, indexUltimoItem);
-  const mapsActuales = maps.slice(indexPrimerItem, indexUltimoItem);
+  const heroesActuales = heroes.slice(indexPrimerItem, indexUltimoItem)
+  const mapsActuales = maps.slice(indexPrimerItem, indexUltimoItem)
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [heroes, maps]);
+  }, [heroes, maps, setCurrentPage])
 
   const handleMapModeChange = (value) => {
-    filterByGameMode(value);
+    filterByGameMode(value)
   }
 
   const handleMapOrderChange = (value) => {
-    orderMapsAlphabetically(value);
-  };
-  console.log(maps)
+    orderMapsAlphabetically(value)
+  }
+
   return (
     <div
       className="w-full min-h-screen"
@@ -62,18 +62,19 @@ function Home() {
 
       <div className="flex w-full justify-center gap-4 py-4 relative z-10" style={{ backgroundColor: '#001922' }}>
 
-        <button
-          className={`px-4 cursor-pointer py-2 rounded z-20 ${isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
+        <Button
+          className={`px-4 cursor-pointer py-2 rounded z-20 ${isHeroe ? "bg-orange-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}
+          name={t("heroes")}
         >
-          {t("heroes")}
-        </button>
-        <button
-          className={`px-4 cursor-pointer py-2 rounded z-20 ${!isHeroe ? "bg-yellow-500" : "bg-gray-600"}`}
+        </Button>
+        <Button
+          className={`px-4 cursor-pointer py-2 rounded z-20 ${!isHeroe ? "bg-orange-500" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(false)}
+          name={t("maps")}
         >
-          {t("maps")}
-        </button>
+
+        </Button>
         <img
           src="/top_diver.png"
           alt="TopDiviver"

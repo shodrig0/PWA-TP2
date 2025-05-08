@@ -3,12 +3,12 @@ import { Youtube, Facebook, Instagram } from 'lucide-react';
 import { useTranslation } from 'react-i18next'
 
 function Footer() {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
 
   return (
-    
-    <footer className="bg-gray-800 w-full text-gray-300 py-8 px-4 text-sm">
+
+    <footer className="bg-gray-800 w-full text-gray-300 py-8 px-4 text-sm" style={{ backgroundColor: '#111F27' }}>
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-y-6">
 
 
@@ -24,7 +24,7 @@ function Footer() {
           </a>
         </div>
 
-    
+
         <div className="flex flex-col items-center text-center gap-2 px-2">
           <img
             src="/blizzardLogo.svg"
@@ -36,7 +36,7 @@ function Footer() {
           </p>
         </div>
 
-      
+
         <nav className="flex flex-wrap justify-center gap-4 text-center text-xs md:text-sm">
           <a href="#" className="hover:underline">{t('footer.privacy')}</a>
           <a href="#" className="hover:underline">{t('footer.terms')}</a>
@@ -45,7 +45,7 @@ function Footer() {
           <a href="#" className="hover:underline">{t('footer.preferences')}</a>
         </nav>
 
-    
+
         <div className="flex flex-wrap justify-center items-center gap-4 mt-2">
           <img
             src="https://blz-contentstack-images.akamaized.net/v3/assets/blt72f16e066f85e164/bltda241a8277f6f927/612d1a5d19b5613c6defce41/esrb.webp"
@@ -60,7 +60,7 @@ function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

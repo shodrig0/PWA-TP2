@@ -2,7 +2,7 @@ import { useLocation, useParams } from "react-router-dom"
 import Header from "../../Components/Header/Header"
 import Footer from "../../Components/Footerr/Footer"
 import Button from "../../Components/Button/Button"
-// import HeroDetailsdos from "../../Components/Containers/ContainerDetails/ContainerHeroDetailsdos"
+// import HeroDetailsdos from "../../Components/Containers/ContainerDetails/ContainerHeroDetailsdos" // <- ignorar
 import HeroDetails from "../../Components/Containers/ContainerDetails/ContainerHeroDetails"
 import MapDetails from "../../Components/Containers/ContainerDetails/ContainerMapDetails"
 import useHeroes from "../../Hooks/useHeroes"

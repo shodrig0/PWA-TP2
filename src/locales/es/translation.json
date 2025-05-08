@@ -1,12 +1,12 @@
 {
-    "heroes": "Héroes",
-    "maps": "Mapas",
-    "search": "Buscar",
-    "home": "Inicio",
-    "noHeroesFound": "No se encontraron héroes",
-    "noMapsFound": "No se encontraron mapas",
-    "favourites": "Favoritos",
-    "aboutUs": "Sobre nosotros",
+  "heroes": "Héroes",
+  "maps": "Mapas",
+  "search": "Buscar",
+  "home": "Inicio",
+  "noHeroesFound": "No se encontraron héroes",
+  "noMapsFound": "No se encontraron mapas",
+  "favourites": "Favoritos",
+  "aboutUs": "Sobre nosotros",
   "filters": {
     "rol": {
       "all": "Todos los roles",
@@ -16,11 +16,12 @@
     }
   },
   "footer": {
-  "rights": "Todos los derechos reservados. Blizzard y Overwatch son marcas comerciales o marcas registradas de Blizzard Entertainment, Inc.",
-  "privacy": "AVISO DE PRIVACIDAD",
-  "terms": "TÉRMINOS DE USO",
-  "cookies": "POLÍTICA DE COOKIES",
-  "info": "INFORMACIÓN DE LA EMPRESA",
-  "preferences": "PREFERENCIAS DE COOKIES"
-}
+    "rights": "Todos los derechos reservados. Blizzard y Overwatch son marcas comerciales o marcas registradas de Blizzard Entertainment, Inc.",
+    "privacy": "AVISO DE PRIVACIDAD",
+    "terms": "TÉRMINOS DE USO",
+    "cookies": "POLÍTICA DE COOKIES",
+    "info": "INFORMACIÓN DE LA EMPRESA",
+    "preferences": "PREFERENCIAS DE COOKIES"
+  },
+  "details": "Detalles"
 }

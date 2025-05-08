@@ -1,28 +1,27 @@
 {
-    "search": "Search",
-    "heroes": "Heroes",
-    "maps": "Maps",
-    "home": "Home",
-    "noHeroesFound": "No heroes found",
-    "noMapsFound": "No maps found",
-    "favourites": "FAVOURITES",
-    "aboutUs": "ABOUT US",
-    "filters": {
-      "rol": {
-        "all": "All roles",
-        "tank": "Tank",
-        "damage": "Damage",
-        "support": "Support"
-      }
-    },
-    "footer": {
-  "rights": "All rights reserved. Blizzard and Overwatch are trademarks or registered trademarks of Blizzard Entertainment, Inc.",
-  "privacy": "PRIVACY NOTICE",
-  "terms": "TERMS OF USE",
-  "cookies": "COOKIE POLICY",
-  "info": "COMPANY INFO",
-  "preferences": "COOKIE PREFERENCES"
+  "search": "Search",
+  "heroes": "Heroes",
+  "maps": "Maps",
+  "home": "Home",
+  "noHeroesFound": "No heroes found",
+  "noMapsFound": "No maps found",
+  "favourites": "FAVOURITES",
+  "aboutUs": "ABOUT US",
+  "filters": {
+    "rol": {
+      "all": "All roles",
+      "tank": "Tank",
+      "damage": "Damage",
+      "support": "Support"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved. Blizzard and Overwatch are trademarks or registered trademarks of Blizzard Entertainment, Inc.",
+    "privacy": "PRIVACY NOTICE",
+    "terms": "TERMS OF USE",
+    "cookies": "COOKIE POLICY",
+    "info": "COMPANY INFO",
+    "preferences": "COOKIE PREFERENCES"
+  },
+  "details": "Details"
 }
-    
-  }
-  

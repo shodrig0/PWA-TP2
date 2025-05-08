@@ -1,11 +1,11 @@
-import { NAVEGACION } from '../../Const/const' // ?
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { NAVEGACION } from '../../Const/const' // ?
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 import useHeroes from '../../Hooks/useHeroes'
 import useMaps from "../../Hooks/useMaps"
-import { useTranslation } from 'react-i18next'
 
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
     const toggleLanguage = () => {
         const newLang = i18n.language === 'en' ? 'es' : 'en';
         i18n.changeLanguage(newLang);
-      };
+    };
 
 
     useEffect(() => {
@@ -51,7 +51,7 @@ const Navbar = () => {
     }
     const handleGoToHome = () => {
         navigate(NAVEGACION.home)
-      }
+    }
     const onSearchChangeHandle = (e) => {
         setSearchValue(e.target.value)
     }
@@ -65,16 +65,16 @@ const Navbar = () => {
 
     return (
         <div
-  className={`transition-all duration-500 ease-in-out ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'} fixed top-0 w-full z-40 p-4 text-white md:flex items-center justify-between`}
-  style={{ backgroundColor: '#111F27' }}
->
+            className={`transition-all duration-500 ease-in-out ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'} fixed top-0 w-full z-40 p-4 text-white md:flex items-center justify-between`}
+            style={{ backgroundColor: '#111F27' }}
+        >
             <Button className="bottom-6 right-6 z-50 bg-orange-400 hover:bg-orange-500 text-black font-bold py-2 px-4 rounded shadow-lg" onClick={handleGoToHome} name={t("home")} />
-            
+
             <Input
                 className="border w-xs border-gray-300 rounded-lg ml-3 p-2"
                 value={searchValue}
                 onChange={onSearchChangeHandle}
-                placeholder={t("search")}            />
+                placeholder={t("search")} />
 
             {searchValue.trim() !== "" && (
                 <div className="absolute top-full ml-5 left-0 w-1/2 bg-gray-800 text-white shadow-lg max-h-64 overflow-y-auto">
@@ -108,13 +108,13 @@ const Navbar = () => {
                 </div>
             )}
 
-            
-                
-            <Button className=" font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToFavourites}  name={t("favourites")} />
-            <Button className="  font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToAboutUs} name={t("aboutUs")}/>
+
+
+            <Button className=" font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToFavourites} name={t("favourites")} />
+            <Button className="  font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToAboutUs} name={t("aboutUs")} />
             <Button />
-            <Button className="  font-primary w-full text-xs md:text-xl cursor-pointer" onClick={toggleLanguage}  name={`🌐 ${i18n.language.toUpperCase()}`} />    
-</div>
+            <Button className="  font-primary w-full text-xs md:text-xl cursor-pointer" onClick={toggleLanguage} name={`🌐 ${i18n.language.toUpperCase()}`} />
+        </div>
     )
 }
 

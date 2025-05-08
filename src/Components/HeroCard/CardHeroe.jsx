@@ -1,8 +1,12 @@
 import React from 'react'
 import Button from '../Button/Button'
 import { iconRol } from '../../utilsJS/logoRol'
+import { useTranslation } from 'react-i18next'
 
 function CardHeroe({ name, portrait, role, onClick, isFavourite, addFavouriteHero }) {
+
+  const { t } = useTranslation()
+
   const iconRole = iconRol[role]
   return (
     <div
@@ -55,7 +59,7 @@ function CardHeroe({ name, portrait, role, onClick, isFavourite, addFavouriteHer
       </div>
       <div className="absolute bottom-2 left-25 md:bottom-2 md:left-18 z-20">
         <Button className="bg-orange-400 w-30 h-7 text-lg md:w-16 md:h-5 md:text-xs hover:bg-orange-500 text-black font-bold  rounded shadow-lg cursor-pointer"
-          onClick={onClick} name={"Details"} />
+          onClick={onClick} name={t("details")} />
       </div>
     </div>
   )

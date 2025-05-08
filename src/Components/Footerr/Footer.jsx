@@ -35,15 +35,25 @@ function Footer() {
             &trade; &amp; &copy; 2025 Blizzard Entertainment, Inc. {t('footer.rights')}
           </p>
         </div>
+        <div>
+        Gracias a Overfast API por su valioso aporte de datos.
+        </div>
 
 
         <nav className="flex flex-wrap justify-center gap-4 text-center text-xs md:text-sm">
-          <a href="#" className="hover:underline">{t('footer.privacy')}</a>
-          <a href="#" className="hover:underline">{t('footer.terms')}</a>
-          <a href="#" className="hover:underline">{t('footer.cookies')}</a>
-          <a href="#" className="hover:underline">{t('footer.info')}</a>
-          <a href="#" className="hover:underline">{t('footer.preferences')}</a>
-        </nav>
+  <a href="https://overfast-api.tekrop.fr/docs#/" target="_blank" rel="noreferrer" className="hover:underline">
+    {t('footer.api')}
+  </a>
+  <a href="https://github.com/shodrig0/PWA-TP2" target="_blank" rel="noreferrer" className="hover:underline">
+    {t('footer.repository')}
+  </a>
+  <a href="#" target="_blank" rel="noreferrer" className="hover:underline">
+    {t('footer.about')}
+  </a>
+  <a href="#" target="_blank" rel="noreferrer" className="hover:underline">
+    {t('footer.overwatch')}
+  </a>
+</nav>
 
 
         <div className="flex flex-wrap justify-center items-center gap-4 mt-2">

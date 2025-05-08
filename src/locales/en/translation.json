@@ -10,11 +10,11 @@
 
   "footer": {
     "rights": "All rights reserved. Blizzard and Overwatch are trademarks or registered trademarks of Blizzard Entertainment, Inc.",
-    "privacy": "PRIVACY NOTICE",
+    "api": "API DOCUMENTATION",
     "terms": "TERMS OF USE",
-    "cookies": "COOKIE POLICY",
-    "info": "COMPANY INFO",
-    "preferences": "COOKIE PREFERENCES"
+    "repository": "REPOSITORY",
+    "about": "ABOUT US",
+    "overwatch": "OVERWATCH"
   },
   "landing": {
     "title": "Welcome to OVERFAST",

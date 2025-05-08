@@ -8,13 +8,14 @@
   "favourites": "FAVORITOS",
   "aboutUs": "SOBRE NOSOTROS",
   "footer": {
-    "rights": "Todos los derechos reservados. Blizzard y Overwatch son marcas comerciales o marcas registradas de Blizzard Entertainment, Inc.",
-    "privacy": "AVISO DE PRIVACIDAD",
-    "terms": "TÉRMINOS DE USO",
-    "cookies": "POLÍTICA DE COOKIES",
-    "info": "INFORMACIÓN DE LA EMPRESA",
-    "preferences": "PREFERENCIAS DE COOKIES"
-  },
+  "rights": "Todos los derechos reservados. Blizzard y Overwatch son marcas comerciales o marcas registradas de Blizzard Entertainment, Inc.",
+  "api": "DOCUMENTACIÓN DE LA API",
+  "terms": "TÉRMINOS DE USO",
+  "repository": "REPOSITORIO",
+  "about": "SOBRE NOSOTROS",
+  "overwatch": "OVERWATCH"
+},
+  
     "landing": {
       "title": "Bienvenido a OVERFAST",
       "intro1": "Descubre",

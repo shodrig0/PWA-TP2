@@ -21,17 +21,17 @@ export default function MaskedImage({ url }) {
       const scrollingDown = currentScrollY > lastScrollY.current;
       lastScrollY.current = currentScrollY;
 
-      // Activar si al menos el 40% es visible y viene desde abajo (scrolling down)
+
       if (visibleRatio >= 0.4 && scrollingDown && !hasAnimated.current) {
         maskedImage.classList.remove("mask-animation");
-        void maskedImage.offsetWidth;  // Forzar reflow
+        void maskedImage.offsetWidth; 
         maskedImage.classList.add("mask-animation");
         hasAnimated.current = true;
       }
 
-      // Solo reiniciar animación si la imagen se ha salido completamente por arriba
-      const isAboveViewport = rect.bottom < 0; // Si la imagen está por encima del viewport
-      const isBelowViewport = rect.top > window.innerHeight; // Si la imagen está completamente debajo del viewport
+     
+      const isAboveViewport = rect.bottom < 0; 
+      const isBelowViewport = rect.top > window.innerHeight; 
 
       if (isAboveViewport && hasAnimated.current) {
         hasAnimated.current = false;
@@ -40,7 +40,7 @@ export default function MaskedImage({ url }) {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Ejecutar al montar
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

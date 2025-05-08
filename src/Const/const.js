@@ -8,5 +8,3 @@ export const NAVEGACION = {
     favourites: "/favourites",
     pageNotFound: "*"
 }
-
-// acomodar rutas

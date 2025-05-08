@@ -1,4 +1,4 @@
-// contexts/PaginationContext.js
+
 import { createContext, useState, useContext } from "react";
 
 const PaginationContext = createContext();

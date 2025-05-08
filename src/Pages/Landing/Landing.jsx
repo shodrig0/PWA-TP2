@@ -31,17 +31,9 @@ const Landing = () => {
         muted
         playsInline
       />
-        <button
-  className="absolute right-10 top-10 w-fit max-w-xs mx-2 flex items-center text-white font-primary text-xl md:text-sm lg:text-base cursor-pointer 
-             rounded-md transition-all duration-300 p-3
-             hover:backdrop-blur-sm hover:bg-white/10 hover:rounded-xl"
-  onClick={toggleLanguage}
->
-        <Globe className="w-5 h-5 mr-2" />
-        {i18n.language.toUpperCase()}
-      </button>
+       
 
-      <div className="relative z-20 max-w-6xl px-6 flex flex-col md:flex-row items-center justify-around gap-10 text-white text-left">
+      <div className="relative z-20  max-w-6xl px-6 flex flex-col md:flex-row items-center justify-around gap-10 text-white text-left">
         <div className="block md:hidden justify-center w-full">
           <img
             src="/overwatch-logo.png"
@@ -85,7 +77,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex md:w-1/2 justify-end">
+        <div className="hidden md:flex md:w-1/2 xl:justify-end ">
           <img
             src="/overwatch-logo.png"
             alt="Overwatch Logo"
@@ -93,6 +85,15 @@ const Landing = () => {
           />
         </div>
       </div>
+      <button
+  className="absolute right-10 top-10 w-fit z-30 max-w-xs mx-2 flex items-center text-white font-primary text-xl md:text-sm lg:text-base cursor-pointer 
+             rounded-md transition-all duration-300 p-3
+             hover:backdrop-blur-sm hover:bg-white/10 hover:rounded-xl"
+  onClick={toggleLanguage}
+>
+        <Globe className="w-5 h-5 mr-2" />
+        {i18n.language.toUpperCase()}
+      </button>
     </div>
   );
 };

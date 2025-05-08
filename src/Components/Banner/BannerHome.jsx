@@ -1,6 +1,6 @@
-// components/BannerHome.jsx
+
 import { useEffect, useRef } from "react";
-import Parallax from "parallax-js"; // ← Usamos la librería directamente
+import Parallax from "parallax-js";
 
 const BannerHome = () => {
   const sceneRef = useRef(null);
@@ -13,7 +13,7 @@ const BannerHome = () => {
       });
 
       return () => {
-        parallaxInstance.disable(); // Limpieza cuando se desmonta
+        parallaxInstance.disable();
       };
     }
   }, []);

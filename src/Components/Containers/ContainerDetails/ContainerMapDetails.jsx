@@ -21,18 +21,16 @@ const MapDetails = () => {
             setMap(foundMap)
             setError(null)
         } else {
-            setError(`Mapa no encontrado: ${name}`)
+            setError(`Unprocessable Content: Check the name!`)
             setMap(null)
         }
     }, [name, getMapByName])
 
     if (error) {
         return (
-            <div className="p-6 text-white">
-                <div className="bg-red-800 p-4 rounded-lg">
-                    <h2 className="text-xl font-bold">Error</h2>
-                    <p>{error}</p>
-                </div>
+            <div className="flex flex-col items-center justify-center min-h-screen text-white">
+                <h1 className="text-4xl font-bold">Error</h1>
+                <p className="mt-4 text-lg">{error}</p>
             </div>
         )
     }
@@ -40,7 +38,6 @@ const MapDetails = () => {
     if (!map) {
         return (
             <div className="flex justify-center items-center min-h-screen">
-                <p>No hay información del mapa disponible</p>
             </div>
         )
     }

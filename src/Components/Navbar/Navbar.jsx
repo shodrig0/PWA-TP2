@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { NAVEGACION } from '../../Const/const' // ?
 import Input from '../Input/Input'
 import Button from '../Button/Button'
+import ButtonLogo from '../Button/ButtonLogo'
 import useHeroes from '../../Hooks/useHeroes'
 import useMaps from "../../Hooks/useMaps"
+import logo from "../../../public/white-logo.png"
 
 
 const Navbar = () => {
@@ -68,7 +70,7 @@ const Navbar = () => {
             className={`transition-all duration-500 ease-in-out ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'} fixed top-0 w-full z-40 p-4 text-white md:flex items-center justify-between`}
             style={{ backgroundColor: '#111F27' }}
         >
-            <Button className="bottom-6 right-6 z-50 bg-orange-400 hover:bg-orange-500 text-black font-bold py-2 px-4 rounded shadow-lg" onClick={handleGoToHome} name={t("home")} />
+
 
             <Input
                 className="border w-xs border-gray-300 rounded-lg ml-3 p-2"
@@ -77,7 +79,7 @@ const Navbar = () => {
                 placeholder={t("search")} />
 
             {searchValue.trim() !== "" && (
-                <div className="absolute top-full ml-5 left-0 w-1/2 bg-gray-800 text-white shadow-lg max-h-64 overflow-y-auto">
+                <div className="absolute w-xs top-full ml-5 left-0 w-1/2 bg-gray-800 text-white shadow-lg max-h-64 overflow-y-auto">
                     <div className="p-2 bg-gray-700 text-sm font-bold">{t("heroes")}</div>
                     {filteredHeroes.length > 0 ? (
                         filteredHeroes.map(hero => (
@@ -108,12 +110,14 @@ const Navbar = () => {
                 </div>
             )}
 
+            <ButtonLogo className="cursor-pointer" onClick={handleGoToHome} name={t("home")}>
+                <img src={logo} alt="" className="w-12 h-12" />
+            </ButtonLogo>
 
-
-            <Button className=" font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToFavourites} name={t("favourites")} />
-            <Button className="  font-primary w-full text-xs md:text-xl cursor-pointer" onClick={handleGoToAboutUs} name={t("aboutUs")} />
+            <Button className="w-fit max-w-xs mx-2 font-primary text-xl md:text-sm lg:text-base cursor-pointer" onClick={handleGoToFavourites} name={t("favourites")} />
+            <Button className="w-fit max-w-xs mx-2 font-primary text-xl md:text-sm lg:text-base cursor-pointer" onClick={handleGoToAboutUs} name={t("aboutUs")} />
             <Button />
-            <Button className="  font-primary w-full text-xs md:text-xl cursor-pointer" onClick={toggleLanguage} name={`🌐 ${i18n.language.toUpperCase()}`} />
+            <Button className="w-fit max-w-xs mx-2 font-primary text-xl md:text-sm lg:text-base cursor-pointer" onClick={toggleLanguage} name={`🌐 ${i18n.language.toUpperCase()}`} />
         </div>
     )
 }

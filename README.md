@@ -195,21 +195,21 @@ Es la API de GitHub para poder listar a este equipo de desarrollo de manera más
 ## Screenshots
 
 Landing
-![lading](image-1.png)
+![lading](./screenshots/image-1.png)
 
 
 Home
-![home](image.png)
+![home](./screenshots/image.png)
 
 Botones de paginado
-![btn](image-2.png)
+![btn](./screenshots/image-2.png)
 
 Favoritos de Heroes
-![favs](image-3.png)
+![favs](./screenshots/image-3.png)
 
 
 Favoritos de Mapas
-![nofavs](image-4.png)
+![nofavs](./screenshots/image-4.png)
 
 ---
 

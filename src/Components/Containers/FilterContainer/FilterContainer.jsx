@@ -37,6 +37,11 @@ const FilterContainer = ({ onOrderChange, onRoleChange, onGameModeChange, isHero
         <SelectFilter options={gameModeOptions} onChange={onGameModeChange} />
       )}
       <SelectFilter options={orderOptions} onChange={onOrderChange} />
+      <img
+    src="/bot_diver.png"
+    alt="TopDiviver"
+    className="absolute hidden md:flex w-full -bop-6 left-1/2 -translate-x-1/2   object-contain"
+  />
     </div>
   );
 };

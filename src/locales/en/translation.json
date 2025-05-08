@@ -16,6 +16,19 @@
     "info": "COMPANY INFO",
     "preferences": "COOKIE PREFERENCES"
   },
+  "landing": {
+    "title": "Welcome to OVERFAST",
+    "intro1": "Discover",
+    "introHeroes": "Overwatch Heroes",
+    "intro2": "explore the game's",
+    "introMaps": "iconic maps",
+    "intro3": "and access",
+    "introStrategy": "strategic details",
+    "feature1": "Filter by role, game mode or region",
+    "feature2": "Save your favourites and access them quickly",
+    "feature3": "Find the information you need in seconds",
+    "homeButton": "HOME"
+  },
   "details": "Details",
   "Hero Details": "Hero Details",
   "Map Details": "Map Details",
@@ -39,6 +52,4 @@
     "Tank": "Tank",
     "Damage": "Damage",
     "Support": "Support"
-  
-
 }

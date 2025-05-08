@@ -7,7 +7,6 @@ import Button from '../Button/Button'
 import ButtonLogo from '../Button/ButtonLogo'
 import useHeroes from '../../Hooks/useHeroes'
 import useMaps from "../../Hooks/useMaps"
-import logo from "../../../public/white-logo.png"
 
 
 const Navbar = () => {
@@ -111,7 +110,7 @@ const Navbar = () => {
             )}
 
             <ButtonLogo className="cursor-pointer" onClick={handleGoToHome} name={t("home")}>
-                <img src={logo} alt="" className="w-12 h-12" />
+                <img src="/white-logo.png" alt="logo" className="w-12 h-12" />
             </ButtonLogo>
 
             <Button className="w-fit max-w-xs mx-2 font-primary text-xl md:text-sm lg:text-base cursor-pointer" onClick={handleGoToFavourites} name={t("favourites")} />

@@ -58,7 +58,7 @@ function CardHeroe({ name, portrait, role, onClick, isFavourite, addFavouriteHer
         </label>
       </div>
       <div className="absolute bottom-2 left-25 md:bottom-2 md:left-18 z-20">
-        <Button className="bg-orange-400 w-30 h-7 text-lg md:w-16 md:h-5 md:text-xs hover:bg-orange-500 text-black font-bold  rounded shadow-lg cursor-pointer"
+        <Button className= "bg-orange-600 hover:bg-orange-700 w-30 h-7 text-lg md:w-16 md:h-5 md:text-xs text-black font-bold  rounded shadow-lg cursor-pointer"
           onClick={onClick} name={t("details")} />
       </div>
     </div>

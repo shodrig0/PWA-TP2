@@ -63,13 +63,13 @@ function Home() {
       <div className="flex w-full justify-center gap-4 py-4 relative z-10 text-white" style={{ backgroundColor: '#001922' }}>
 
         <Button
-          className={`px-4 cursor-pointer py-2 rounded z-20 ${isHeroe ? "bg-orange-500" : "bg-gray-600"}`}
+          className={`px-4 cursor-pointer py-2 rounded z-20 ${isHeroe ? "bg-orange-600" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(true)}
           name={t("heroes")}
         >
         </Button>
         <Button
-          className={`px-4 cursor-pointer py-2 rounded z-20 ${!isHeroe ? "bg-orange-500" : "bg-gray-600"}`}
+          className={`px-4 cursor-pointer py-2 rounded z-20 ${!isHeroe ? "bg-orange-600" : "bg-gray-600"}`}
           onClick={() => setIsHeroe(false)}
           name={t("maps")}
         >

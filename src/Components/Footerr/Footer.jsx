@@ -47,10 +47,10 @@ function Footer() {
   <a href="https://github.com/shodrig0/PWA-TP2" target="_blank" rel="noreferrer" className="hover:underline">
     {t('footer.repository')}
   </a>
-  <a href="#" target="_blank" rel="noreferrer" className="hover:underline">
+  <a href="https://overwatch-api-five.vercel.app/aboutus" target="_blank" rel="noreferrer" className="hover:underline">
     {t('footer.about')}
   </a>
-  <a href="#" target="_blank" rel="noreferrer" className="hover:underline">
+  <a href="https://overwatch.blizzard.com/es-es/" target="_blank" rel="noreferrer" className="hover:underline">
     {t('footer.overwatch')}
   </a>
 </nav>
